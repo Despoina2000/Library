@@ -1,7 +1,10 @@
+import { Book } from "./books-api";
+import { Customer } from "./customers-api";
+
 export interface Reservation{
     //book name, customer name, status, reserved On,  return By
-    book_name: string;
-    customer_name: string;
+    book: Book;//Book interface 
+    customer: Customer;//Customer interface
     status: string;
     phoneNumber:number;
     reservedOn: Date;

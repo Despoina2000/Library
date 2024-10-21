@@ -1,8 +1,9 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { BooksComponent } from './components/books/books.component';
-import { CustomersComponent } from './components/customers/customers.component';
-import { ReservationsComponent } from './components/reservations/reservations.component';
+import { HomeComponent } from './components/menu/home/home.component';
+import { BooksComponent } from './components/menu/books/books.component';
+import { CustomersComponent } from './components/menu/customers/customers.component';
+import { ReservationsComponent } from './components/menu/reservations/reservations.component';
+
 
 export const routes: Routes = [
     {
