@@ -11,7 +11,7 @@ export class BookService {
   endpoint: string='https://book-api-bx2r.onrender.com/books';
   constructor(private http: HttpClient) { }
 
-  getAllBooks(): Observable<Array<Book>>{
-    return this.http.get<Array<Book>>(this.endpoint);
+  getAllBooks(): Observable<Array<Book>|null>{
+    return this.http.get<Array<Book>|null>(this.endpoint);
   }
 }

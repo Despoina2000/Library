@@ -10,7 +10,7 @@ import { BookService } from '../../../services/book/book.service';
   styleUrl: './books.component.css'
 })
 export class BooksComponent {
-  books: Array<Book>= [];
+  books: Array<Book>|null= [];
   constructor(private bookServise:BookService){
     this.bookServise.getAllBooks().subscribe((data)=>{
        this.books=data;

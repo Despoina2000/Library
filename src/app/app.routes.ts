@@ -18,5 +18,8 @@ export const routes: Routes = [
     {
         path:'reservations', component:ReservationsComponent
     },
+    // { 
+    //     path: '', redirectTo: '/', pathMatch: 'full'
+    //  } // Default route
 
 ];

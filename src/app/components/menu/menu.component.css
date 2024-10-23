@@ -1,0 +1,13 @@
+a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+  }
+  
+  a.active {
+    font-weight: bold;
+  }
+  
+  mat-toolbar {
+    padding: 0 16px;
+  }
