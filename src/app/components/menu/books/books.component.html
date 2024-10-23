@@ -1,1 +1,36 @@
-<p>books works!</p>
+<div class="grid-container">
+
+@if(books !== null){
+    @for(book of books;track $index){
+        <mat-card >
+            <mat-card-header>
+              <mat-card-title>{{book.name}}</mat-card-title>
+              <mat-card-subtitle>{{book.type}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="center">
+                        <p>
+                        <b>Author:</b> {{book.author}}
+                      </p>
+                      <p>
+                        <b>Year:</b> {{book.year}}
+                      </p>
+                      <p>
+                        <b>Created On:</b> {{book.createdOn|date:'MMM d'}}
+                      </p>
+                </div>          
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-flat-button>Rent</button>
+            </mat-card-actions>
+          </mat-card>
+    }
+    @empty {
+    No books found!
+    }
+}
+@else {
+   <p>Something went wrong</p> 
+}
+
+</div>
