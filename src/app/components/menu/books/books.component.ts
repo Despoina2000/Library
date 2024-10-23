@@ -14,9 +14,9 @@ import {MatButtonModule} from '@angular/material/button';
 })
 export class BooksComponent {
   books: Array<Book>|null= [];
-  constructor(private bookServise:BookService){
+  constructor(private bookService:BookService){
     try{
-      this.bookServise.getAllBooks().subscribe((data)=>{
+      this.bookService.getAllBooks().subscribe((data)=>{
         this.books=data;
      });
     }
