@@ -18,7 +18,7 @@ export class HomeComponent {
   categories: Array<string>=[];
   hideMultipleSelectionIndicator = signal(false);
 
-  constructor(public bookServise:BookService){
+  constructor(private bookServise:BookService){
     try{
       this.bookServise.getAllBooks().subscribe((data)=>{
         data?.forEach(element => {
@@ -35,7 +35,7 @@ export class HomeComponent {
     }
   }
 
-  ngOnInit(){
+  ngOnChange(){
     
   }
 
