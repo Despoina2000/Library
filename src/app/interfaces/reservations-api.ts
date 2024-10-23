@@ -8,7 +8,7 @@ export interface Reservation{
     status: string;
     phoneNumber:number;
     reservedOn: Date;
-    reserveBy: Date;
+    returnBy: Date;
    
    
 }

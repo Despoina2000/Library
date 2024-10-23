@@ -12,7 +12,7 @@ export class ReservationService {
   endpoint: string='https://book-api-bx2r.onrender.com/reservations';
   
 
-  getAllCustomers(): Observable<Array<Reservation>>{
+  getAllReservations(): Observable<Array<Reservation>>{
     return this.http.get<Array<Reservation>>(this.endpoint);
   }
 }
