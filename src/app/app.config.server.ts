@@ -10,6 +10,7 @@ import { provideClientHydration } from '@angular/platform-browser';
 
 const serverConfig: ApplicationConfig = {
   providers: [
+    provideServerRendering(),
     provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),provideHttpClient(), provideAnimationsAsync(),provideClientHydration(),
   ]
 };
