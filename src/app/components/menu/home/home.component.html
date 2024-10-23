@@ -1,4 +1,16 @@
-<h1>Welcome to Rocket Team!</h1><img src="favicon.png" style="height:100px; width:100px;">
+<h1><img src="favicon.png" style="height:100px; width:100px;"> Welcome to Rocket Team!</h1>
+<br/>
+<mat-button-toggle-group
+    name="ingredients"
+    aria-label="Ingredients"
+    [hideMultipleSelectionIndicator]="hideMultipleSelectionIndicator()"
+    value="all"
+    >
+  @for(category of categories;track $index){
+    <mat-button-toggle value="{{category}}">{{category}}</mat-button-toggle>
+  }
+  <mat-button-toggle value="all">All</mat-button-toggle>
+  </mat-button-toggle-group>
 <div class="grid-container">
     @if(books !== null){
         @for(book of books;track $index){
