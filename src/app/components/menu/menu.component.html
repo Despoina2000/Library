@@ -1,5 +1,6 @@
 <mat-toolbar color="primary" >
     <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+      <a  [routerLink]="''" class="logo"> <img src="logo-no-background.png" style="height: 100px; width:300px;"></a>
         <a mat-tab-link
          *ngFor="let link of links"
          [routerLink]="link.path"
@@ -13,4 +14,3 @@
 <mat-tab-nav-panel #tabPanel>
   </mat-tab-nav-panel>
 
-  

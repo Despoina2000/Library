@@ -9,5 +9,10 @@ a {
   }
   
   mat-toolbar {
-    padding: 0 16px;
+    padding-bottom: 5%;
+    padding-top: 5%;
+  }
+
+  .logo{
+    padding-right: 10px;
   }
