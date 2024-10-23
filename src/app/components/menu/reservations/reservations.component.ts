@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Reservation } from '../../../interfaces/reservations-api';
 import { ReservationService } from '../../../services/reservation/reservation.service';
 import {MatTableModule} from '@angular/material/table';
+import {  DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-reservations',
   standalone: true,
-  imports: [MatTableModule],
+  imports: [MatTableModule, DatePipe],
   templateUrl: './reservations.component.html',
   styleUrl: './reservations.component.css'
 })
