@@ -1,22 +1,19 @@
 import { Component,signal } from '@angular/core';
-import {  DatePipe} from '@angular/common';
 import { Book } from '../../../interfaces/books-api';
 import { BookService } from '../../../services/book/book.service';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { ListOfBooksComponent } from '../list-of-books/list-of-books.component';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatCardModule,MatButtonModule,DatePipe,MatButtonToggleModule],
+  imports: [ListOfBooksComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
   books: Array<Book>|null= [];
   categories: Array<string>=[];
-  hideMultipleSelectionIndicator = signal(false);
 
   constructor(private bookServise:BookService){
     try{
@@ -39,7 +36,5 @@ export class HomeComponent {
     
   }
 
-  toggleMultipleSelectionIndicator() {
-    this.hideMultipleSelectionIndicator.update(value => !value);
-  }
+  
 }
