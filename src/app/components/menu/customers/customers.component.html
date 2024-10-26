@@ -1,4 +1,7 @@
 <h1>Customer List</h1>
+<button mat-flat-button class="btn default_button" (click)="addCustomer()">
+  <mat-icon>add</mat-icon> Add new customer
+</button>
 @if(customers.length>0){
     <table mat-table [dataSource]="customers" class="mat-elevation-z8">
         <ng-container matColumnDef="id">

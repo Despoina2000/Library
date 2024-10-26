@@ -4,6 +4,8 @@ import { Customer } from '../../../interfaces/customers-api';
 import { CustomerService } from '../../../services/customer/customer.service';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { error } from 'console';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customers',
@@ -16,16 +18,19 @@ export class CustomersComponent {
   displayedColumns: string[] = ['id', 'name', 'surname', 'email', 'phone', 'actions'];
   customers: Array<Customer>=[];
 
-  constructor(private customerService: CustomerService){
-    try{
+  constructor(private customerService: CustomerService,private router: Router){
+    
       this.customerService.getAllCustomers().subscribe((data)=>{
         this.customers=data;
-     });
-    }
-    catch( HttpErrorResponse){
+     },(error)=>{
+      console.log(error);
       this.customers=[];
-    }
+     });
     
+  }
+
+  addCustomer(){
+    this.router.navigate(['customers/add']);
   }
 
 
