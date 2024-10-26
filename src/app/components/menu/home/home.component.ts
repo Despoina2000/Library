@@ -2,6 +2,7 @@ import { Component,signal } from '@angular/core';
 import { Book } from '../../../interfaces/books-api';
 import { BookService } from '../../../services/book/book.service';
 import { ListOfBooksComponent } from '../list-of-books/list-of-books.component';
+import { error } from 'console';
 
 
 @Component({
@@ -12,11 +13,11 @@ import { ListOfBooksComponent } from '../list-of-books/list-of-books.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  books: Array<Book>|null= [];
+  books: Array<Book>= [];
   categories: Array<string>=[];
 
   constructor(private bookServise:BookService){
-    try{
+    
       this.bookServise.getAllBooks().subscribe((data)=>{
         data?.forEach(element => {
           if(element.available==true){
@@ -25,11 +26,10 @@ export class HomeComponent {
           
         });
         this.categories=[...new Set(data?.map(item => item.type))];
+     },(error)=>{
+      console.log(error);
+      this.books=[];
      });
-    }
-    catch( HttpErrorResponse){
-      this.books=null;
-    }
   }
 
   ngOnChange(){

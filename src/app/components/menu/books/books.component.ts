@@ -5,6 +5,7 @@ import { BookService } from '../../../services/book/book.service';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { ListOfBooksComponent } from '../list-of-books/list-of-books.component';
+import { error } from 'console';
 
 
 @Component({
@@ -15,20 +16,17 @@ import { ListOfBooksComponent } from '../list-of-books/list-of-books.component';
   styleUrl: './books.component.css',
 })
 export class BooksComponent {
-  books: Array<Book>|null= [];
+  books: Array<Book>= [];
   categories: Array<string>=[];
   constructor(private bookService:BookService){
-    try{
+    
       this.bookService.getAllBooks().subscribe((data)=>{
-        this.books=data;
+        this.books=data? data:[];
         this.categories=[...new Set(data?.map(item => item.type))];
+     },(error)=>{
+      console.log(error);
+      this.books=[];
      });
-     
-     
-    }
-    catch( HttpErrorResponse){
-      this.books=null;
-    }
     
   }
 }

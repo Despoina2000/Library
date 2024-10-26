@@ -1,4 +1,5 @@
 <mat-button-toggle-group
+[formControl]="categoryControl"
     name="ingredients"
     aria-label="Ingredients"
     [hideMultipleSelectionIndicator]="hideMultipleSelectionIndicator()"
@@ -10,8 +11,8 @@
   <mat-button-toggle value="all">All</mat-button-toggle>
   </mat-button-toggle-group>
 <div class="grid-container">
-    @if(books !== null){
-        @for(book of books;track $index){
+    @if(filteredBooks.length>0){
+        @for(book of filteredBooks;track $index){
             <mat-card >
                 <mat-card-header>
                   <mat-card-title>{{book.name}}</mat-card-title>
