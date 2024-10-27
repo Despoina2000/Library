@@ -29,7 +29,7 @@
             <label for="type">Type*:</label>
             <select id="type" formControlName="type">
               <option [value]="book?.type">Select type</option>
-              <option *ngFor="let type of bookTypes" [value]="type">{{ type }}</option>
+              <option *ngFor="let type of bookTypes" [value]="book?.type?book?.type:type">{{ type }}</option>
             </select>
             <div *ngIf="bookForm.get('type')?.invalid && (bookForm.get('type')?.touched || bookForm.get('type')?.dirty)">
               <small *ngIf="bookForm.get('type')?.errors?.['required']">Type is required.</small>
@@ -46,7 +46,7 @@
         </section>
         <section>
             <label for="createdOn">Created On:</label>
-            <input type="date" id="createdOn" formControlName="createdOn" [value]="book?.createdOn"/>
+            <input type="date" id="createdOn" formControlName="createdOn" [value]="book?.createdOn|date:'MMM/dd/yyyy'"/>
           </section>
         @if(bookId){
             <button mat-flat-button class="default_button" [disabled]="bookForm.invalid" (click)="bookId? updateBook():addBook()">

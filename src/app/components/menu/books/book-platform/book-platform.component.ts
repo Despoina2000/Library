@@ -3,12 +3,12 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Book } from '../../../../interfaces/books-api';
 import { BookService } from '../../../../services/book/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgFor, NgIf } from '@angular/common';
+import { DatePipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-book-platform',
   standalone: true,
-  imports: [NgIf,NgFor,ReactiveFormsModule],
+  imports: [NgIf,NgFor,ReactiveFormsModule,DatePipe],
   templateUrl: './book-platform.component.html',
   styleUrl: './book-platform.component.css'
 })
