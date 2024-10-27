@@ -23,6 +23,9 @@ export const routes: Routes = [
         path:'customers/edit/:id', component:CustomerPlatformComponent
     },
     {
+        path:'customers/view/:id', component:CustomerPlatformComponent
+    },
+    {
         path:'reservations', component:ReservationsComponent
     },
     { 

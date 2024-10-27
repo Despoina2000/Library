@@ -1,6 +1,7 @@
 import { Component, Input, signal, SimpleChanges } from '@angular/core';
 import {  DatePipe} from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { Book } from '../../../interfaces/books-api';
@@ -9,7 +10,7 @@ import { FormControl,FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-list-of-books',
   standalone: true,
-  imports: [MatCardModule,MatButtonModule,DatePipe,MatButtonToggleModule, FormsModule, ReactiveFormsModule],
+  imports: [MatCardModule,MatButtonModule,DatePipe,MatButtonToggleModule, FormsModule, ReactiveFormsModule, MatIconModule],
   templateUrl: './list-of-books.component.html',
   styleUrl: './list-of-books.component.css'
 })

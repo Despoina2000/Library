@@ -31,13 +31,13 @@
           <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef> Actions </th>
             <td mat-cell *matCellDef="let element">
-                <button class="btn default_button" mat-fab aria-label="view" data-toggle="tooltip" data-placement="top" title="view">
+                <button class="btn default_button" mat-fab aria-label="view" data-toggle="tooltip" data-placement="top" title="view" (click)="viewCustomer(element._id)">
                     <mat-icon>visibility</mat-icon>
                   </button>
-                  <button class="btn default_button" mat-fab aria-label="edit" data-toggle="tooltip" data-placement="top" title="edit">
+                  <button class="btn default_button" mat-fab aria-label="edit" data-toggle="tooltip" data-placement="top" title="edit" (click)="editCustomer(element._id)">
                     <mat-icon>settings</mat-icon>
                   </button> 
-                <button class="btn delete_button" mat-fab aria-label="delete" data-toggle="tooltip" data-placement="top" title="delete">
+                <button class="btn delete_button" mat-fab aria-label="delete" data-toggle="tooltip" data-placement="top" title="delete" (click)="confirmDelete(element._id)" >
                     <mat-icon>delete</mat-icon>
                   </button>
                   

@@ -1,6 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup,ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../../../../services/customer/customer.service';
 import { Customer } from '../../../../interfaces/customers-api';
 
@@ -15,11 +16,63 @@ export class CustomerPlatformComponent {
   customerForm: FormGroup=new FormGroup({
     firstName: new FormControl(undefined,[Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
     lastName: new FormControl(undefined,[Validators.required,Validators.minLength(3),Validators.maxLength(15)]),
-    phonenumber: new FormControl(undefined,[Validators.required,Validators.minLength(8),Validators.pattern("^[0-9]{10}$")]),
-    email: new FormControl(undefined,[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")])
+    phonenumber: new FormControl(undefined,[Validators.required,Validators.minLength(8),Validators.pattern("^[0-9]{3}-[0-9]{3}-[0-9]{4}$")]),
+    email: new FormControl(undefined,[Validators.required,Validators.email])
   });
 
-  constructor(private customerService: CustomerService) {}
+  customerId: string | null = null;
+  customer: Customer | null = null;
+  isViewMode = false;
+  
+
+  constructor(
+    private customerService: CustomerService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    // Check the route to determine if we're adding, viewing, or editing
+    this.route.paramMap.subscribe(params => {
+      this.customerId = params.get('id');
+      const path = this.route.snapshot.routeConfig?.path;
+
+      if (path === 'customers/view/:id') {
+        this.isViewMode = true;
+        this.loadCustomerData(this.customerId);
+        this.customerForm.disable(); // Disable the form in view mode
+      } else if (path === 'customers/edit/:id') {
+        this.loadCustomerData(this.customerId);
+      }
+    });
+  }
+
+  // Load customer data if we're in edit or view mode
+  loadCustomerData(customerId: string | null): void {
+    
+    if (customerId) {
+      this.customerService.getCustomer(customerId).subscribe(
+        (customerData: Customer|null) => {
+          if(customerData){
+            this.customer= customerData;
+            this.customerForm.patchValue({
+              firstName: customerData.name,
+              lastName: customerData.surname,
+              phonenumber: customerData.phoneNumber,
+              email: customerData.email
+            });
+          }
+          else{
+            this.customer=null
+          }
+          
+        },
+        (error) => {
+          console.error('Error loading customer data', error);
+        }
+      );
+    }
+  }
 
   addCustomer() {
     if (this.customerForm.valid) {
@@ -36,9 +89,32 @@ export class CustomerPlatformComponent {
           console.error('Error adding customer', error);
         }
       );
+      this.router.navigate(['customers']);
     } else {
       console.log('Form is invalid');
     }
   }
+
+  updateCustomer() {
+    if (this.customerForm.valid && this.customerId) {
+      const customerData: Customer = {
+        _id: this.customerId,
+        ...this.customerForm.value
+      };
+
+      this.customerService.updateCustomer(customerData)?.subscribe(
+        (response: Customer) => {
+          console.log('Customer updated successfully', response);
+          this.router.navigate(['/customers']);
+        },
+        (error) => {
+          console.error('Error updating customer', error);
+        }
+      );
+    } else {
+      console.log('Form is invalid or customerId is missing');
+    }
+  }
 }
+
 
