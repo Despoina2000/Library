@@ -6,7 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { error } from 'console';
 import { Router } from '@angular/router';
-import { DeletePopUpComponent } from './delete-pop-up/delete-pop-up.component';
+import { DeletePopUpComponent } from '../delete-pop-up/delete-pop-up.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({

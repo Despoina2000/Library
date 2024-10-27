@@ -1,0 +1,60 @@
+ @if (bookId) {
+    <h1>Edit Book</h1>
+}@else {
+    <h1>Create new Book!</h1>
+}
+
+<fieldset>
+    <legend>Book Info:</legend>
+    <form [formGroup]="bookForm">
+        <section>
+            <label>Title*:</label>
+            <input type="text" formControlName="name" [value]="book?.name" />
+            <div *ngIf="bookForm.get('name')?.invalid && (bookForm.get('name')?.touched || bookForm.get('name')?.dirty)">
+                <small class="error" *ngIf="bookForm.get('name')?.errors?.['required']">Title is required.</small>
+                <small class="error" *ngIf="bookForm.get('name')?.errors?.['minlength']">Title must be at least 3 characters.</small>
+                <small class="error" *ngIf="bookForm.get('name')?.errors?.['maxlength']">Title cannot exceed 15 characters.</small>
+              </div>
+        </section>
+        <section>
+            <label>Year*:</label>
+            <input type="number" formControlName="year" [value]="book?.year"/>
+            <div *ngIf="bookForm.get('year')?.invalid && (bookForm.get('year')?.touched || bookForm.get('year')?.dirty)">
+                <small class="error" *ngIf="bookForm.get('year')?.errors?.['required']">Year is required.</small>
+                <small class="error" *ngIf="bookForm.get('year')?.errors?.['min']">Year must be greater or equal to 1900.</small>
+                <small class="error" *ngIf="bookForm.get('year')?.errors?.['max']">Year must be less or equalr to 2024.</small>
+              </div>
+        </section>
+        <section>
+            <label for="type">Type*:</label>
+            <select id="type" formControlName="type">
+              <option [value]="book?.type">Select type</option>
+              <option *ngFor="let type of bookTypes" [value]="type">{{ type }}</option>
+            </select>
+            <div *ngIf="bookForm.get('type')?.invalid && (bookForm.get('type')?.touched || bookForm.get('type')?.dirty)">
+              <small *ngIf="bookForm.get('type')?.errors?.['required']">Type is required.</small>
+            </div>
+          </section>
+        <section>
+            <label>Author*:</label>
+            <input type="text" formControlName="author" [value]="book?.author" />
+            <div *ngIf="bookForm.get('author')?.invalid && (bookForm.get('author')?.touched || bookForm.get('author')?.dirty)">
+                <small class="error" *ngIf="bookForm.get('author')?.errors?.['required']">Author is required.</small>
+                <small class="error" *ngIf="bookForm.get('author')?.errors?.['minlength']">Author must be at least 3 characters.</small>
+                <small class="error" *ngIf="bookForm.get('author')?.errors?.['maxlength']">Author cannot exceed 15 characters.</small>
+              </div>
+        </section>
+        <section>
+            <label for="createdOn">Created On:</label>
+            <input type="date" id="createdOn" formControlName="createdOn" [value]="book?.createdOn"/>
+          </section>
+        @if(bookId){
+            <button mat-flat-button class="default_button" [disabled]="bookForm.invalid" (click)="bookId? updateBook():addBook()">
+                Submit
+             </button>
+        }
+        
+    </form>
+</fieldset>
+
+

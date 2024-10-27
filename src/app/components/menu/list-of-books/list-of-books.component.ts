@@ -6,6 +6,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { Book } from '../../../interfaces/books-api';
 import { FormControl,FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { DeletePopUpComponent } from '../delete-pop-up/delete-pop-up.component';
+import { BookService } from '../../../services/book/book.service';
 
 @Component({
   selector: 'app-list-of-books',
@@ -21,7 +25,9 @@ export class ListOfBooksComponent {
   @Input() isRentable: boolean= false;
   categoryControl = new FormControl('all');
   filteredBooks: Book[] = [];
+constructor(private bookService:BookService,private dialog: MatDialog,private router: Router){
 
+}
   ngOnInit(): void {
     // Listen for changes in categoryControl to apply filter dynamically
     this.categoryControl.valueChanges.subscribe((selectedCategory) => {
@@ -43,6 +49,34 @@ export class ListOfBooksComponent {
 
   toggleMultipleSelectionIndicator() {
     this.hideMultipleSelectionIndicator.update(value => !value);
+  }
+  confirmDelete(bookId:string): void {
+    const dialogRef = this.dialog.open(DeletePopUpComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.deleteBook(bookId);
+      }
+    });
+  }
+
+  // Delete book function
+  deleteBook(bookId:string): void {
+    if (bookId) {
+      this.bookService.deleteBook(bookId)?.subscribe(
+        () => {
+          console.log('Book deleted successfully');
+          this.router.navigate(['/books']);
+        },
+        (error) => {
+          console.error('Error deleting book', error);
+        }
+      );
+    }
+  }
+  
+  editBook(bookId:string){
+    this.router.navigate(['books/edit/'+bookId]);
   }
 
 }

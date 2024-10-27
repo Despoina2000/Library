@@ -14,6 +14,15 @@ export const routes: Routes = [
         path:'books', component:BooksComponent
     },
     {
+        path:'books/add', component:BooksComponent
+    },
+    {
+        path:'books/edit/:id', component:BooksComponent
+    },
+    {
+        path:'books/delete/:id', component:BooksComponent
+    },
+    {
         path:'customers', component:CustomersComponent
     },
     {

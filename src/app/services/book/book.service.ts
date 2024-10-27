@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Book } from '../../interfaces/books-api';
 
 @Injectable({
@@ -13,5 +13,34 @@ export class BookService {
 
   getAllBooks(): Observable<Array<Book>|null>{
     return this.http.get<Array<Book>|null>(this.endpoint);
+  }
+  
+
+  getBook(bookId: string): Observable<Book|null> {
+    return this.getAllBooks().pipe(
+      map((books) => {
+        // Find the book with the matching ID, or return null if not found
+        return books?.find(book => book._id === bookId) || null;
+      })
+    );
+  }
+
+  addBook(bookData: Book): Observable<Book> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<Book>(this.endpoint, bookData, { headers });
+  }
+
+  updateBook(bookData: Book): Observable<Book>|null {
+   if(this.getBook(bookData._id)){
+      return this.http.put<Book>(`${this.endpoint}/${bookData._id}`, bookData);
+    }
+    return null;
+  }
+
+  deleteBook(bookId: string): Observable<void>|null {
+    if(this.getBook(bookId)){
+      return this.http.delete<void>(`${this.endpoint}/${bookId}`);
+    }
+    return null;
   }
 }

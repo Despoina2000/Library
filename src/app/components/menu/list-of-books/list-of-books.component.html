@@ -36,10 +36,10 @@
                         <button mat-flat-button>Rent</button>
                     } 
                     @else {
-                      <button class="btn default_button" mat-fab aria-label="edit" data-toggle="tooltip" data-placement="top" title="edit">
+                      <button class="btn default_button" mat-fab aria-label="edit" data-toggle="tooltip" data-placement="top" title="edit" (click)="editBook(book._id)">
                         <mat-icon>settings</mat-icon>
                       </button> 
-                    <button class="btn delete_button" mat-fab aria-label="delete" data-toggle="tooltip" data-placement="top" title="delete">
+                      <button class="btn delete_button" mat-fab aria-label="delete" data-toggle="tooltip" data-placement="top" title="delete" (click)="confirmDelete(book._id)" >
                         <mat-icon>delete</mat-icon>
                       </button>
                     }
