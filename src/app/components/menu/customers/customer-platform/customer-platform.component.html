@@ -11,28 +11,28 @@
     <form [formGroup]="customerForm">
         <section>
             <label>First Name*:</label>
-            <input type="text" formControlName="firstName" [value]="customer?.name" [disabled]="isViewMode"/>
-            <div *ngIf="customerForm.get('firstName')?.invalid && (customerForm.get('firstName')?.touched || customerForm.get('firstName')?.dirty)">
-                <small class="error" *ngIf="customerForm.get('firstName')?.errors?.['required']">First Name is required.</small>
-                <small class="error" *ngIf="customerForm.get('firstName')?.errors?.['minlength']">First Name must be at least 3 characters.</small>
-                <small class="error" *ngIf="customerForm.get('firstName')?.errors?.['maxlength']">First Name cannot exceed 15 characters.</small>
+            <input type="text" formControlName="name" [value]="customer?.name" [disabled]="isViewMode"/>
+            <div *ngIf="customerForm.get('name')?.invalid && (customerForm.get('name')?.touched || customerForm.get('name')?.dirty)">
+                <small class="error" *ngIf="customerForm.get('name')?.errors?.['required']">First Name is required.</small>
+                <small class="error" *ngIf="customerForm.get('name')?.errors?.['minlength']">First Name must be at least 3 characters.</small>
+                <small class="error" *ngIf="customerForm.get('name')?.errors?.['maxlength']">First Name cannot exceed 15 characters.</small>
               </div>
         </section>
         <section>
             <label>Last Name*:</label>
-            <input type="text" formControlName="lastName" [value]="customer?.surname" [disabled]="isViewMode"/>
-            <div *ngIf="customerForm.get('lastName')?.invalid && (customerForm.get('lastName')?.touched || customerForm.get('lastName')?.dirty)">
-                <small class="error" *ngIf="customerForm.get('lastName')?.errors?.['required']">Last Name is required.</small>
-                <small class="error" *ngIf="customerForm.get('lastName')?.errors?.['minlength']">Last Name must be at least 3 characters.</small>
-                <small class="error" *ngIf="customerForm.get('lastName')?.errors?.['maxlength']">Last Name cannot exceed 15 characters.</small>
+            <input type="text" formControlName="surname" [value]="customer?.surname" [disabled]="isViewMode"/>
+            <div *ngIf="customerForm.get('surname')?.invalid && (customerForm.get('surname')?.touched || customerForm.get('surname')?.dirty)">
+                <small class="error" *ngIf="customerForm.get('surname')?.errors?.['required']">Last Name is required.</small>
+                <small class="error" *ngIf="customerForm.get('surname')?.errors?.['minlength']">Last Name must be at least 3 characters.</small>
+                <small class="error" *ngIf="customerForm.get('surname')?.errors?.['maxlength']">Last Name cannot exceed 15 characters.</small>
               </div>
         </section>
         <section>
             <label>Phone Number*:</label>
-            <input type="text" formControlName="phonenumber" [value]="customer?.phoneNumber" [disabled]="isViewMode"/>
-            <div *ngIf="customerForm.get('phonenumber')?.invalid && (customerForm.get('phonenumber')?.touched || customerForm.get('phonenumber')?.dirty)">
-                <small class="error" *ngIf="customerForm.get('phonenumber')?.errors?.['required']">Phone Number is required.</small>
-                <small class="error" *ngIf="customerForm.get('phonenumber')?.errors?.['minlength']">Phone Number must be at least 8 characters.</small>
+            <input type="text" formControlName="phoneNumber" [value]="customer?.phoneNumber" [disabled]="isViewMode"/>
+            <div *ngIf="customerForm.get('phoneNumber')?.invalid && (customerForm.get('phoneNumber')?.touched || customerForm.get('phoneNumber')?.dirty)">
+                <small class="error" *ngIf="customerForm.get('phoneNumber')?.errors?.['required']">Phone Number is required.</small>
+                <small class="error" *ngIf="customerForm.get('phoneNumber')?.errors?.['minlength']">Phone Number must be at least 8 characters.</small>
                 <small *ngIf="customerForm.get('phoneNumber')?.errors?.['pattern']">Invalid phone number format.</small>
               </div>
         </section>

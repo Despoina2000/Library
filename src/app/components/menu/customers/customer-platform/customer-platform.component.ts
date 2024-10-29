@@ -77,8 +77,7 @@ export class CustomerPlatformComponent {
   addCustomer() {
     if (this.customerForm.valid) {
       const customerData: Customer = {
-        ...this.customerForm.value,
-        _id: Math.random().toString(16).slice(2, 14)
+        ...this.customerForm.value
       };
 
       this.customerService.addCustomer(customerData).subscribe(
