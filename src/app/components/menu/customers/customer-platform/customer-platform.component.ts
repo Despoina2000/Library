@@ -14,9 +14,9 @@ import { Customer } from '../../../../interfaces/customers-api';
 })
 export class CustomerPlatformComponent {
   customerForm: FormGroup=new FormGroup({
-    firstName: new FormControl(undefined,[Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
-    lastName: new FormControl(undefined,[Validators.required,Validators.minLength(3),Validators.maxLength(15)]),
-    phonenumber: new FormControl(undefined,[Validators.required,Validators.minLength(8),Validators.pattern("^[0-9]{3}-[0-9]{3}-[0-9]{4}$")]),
+    name: new FormControl(undefined,[Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
+    surname: new FormControl(undefined,[Validators.required,Validators.minLength(3),Validators.maxLength(15)]),
+    phoneNumber: new FormControl(undefined,[Validators.required,Validators.minLength(8),Validators.pattern("^[0-9]{3}-[0-9]{3}-[0-9]{4}$")]),
     email: new FormControl(undefined,[Validators.required,Validators.email])
   });
 
@@ -40,6 +40,10 @@ export class CustomerPlatformComponent {
       if (path === 'customers/view/:id') {
         this.isViewMode = true;
         this.loadCustomerData(this.customerId);
+        this.customerForm.controls['name'].disable();
+        this.customerForm.controls['surname'].disable();
+        this.customerForm.controls['phoneNumber'].disable();
+        this.customerForm.controls['email'].disable();
         this.customerForm.disable(); // Disable the form in view mode
       } else if (path === 'customers/edit/:id') {
         this.loadCustomerData(this.customerId);

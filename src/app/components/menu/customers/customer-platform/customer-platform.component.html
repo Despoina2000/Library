@@ -11,7 +11,7 @@
     <form [formGroup]="customerForm">
         <section>
             <label>First Name*:</label>
-            <input type="text" formControlName="name" [value]="customer?.name" [disabled]="isViewMode"/>
+            <input type="text" formControlName="name" [value]="customer?.name" />
             <div *ngIf="customerForm.get('name')?.invalid && (customerForm.get('name')?.touched || customerForm.get('name')?.dirty)">
                 <small class="error" *ngIf="customerForm.get('name')?.errors?.['required']">First Name is required.</small>
                 <small class="error" *ngIf="customerForm.get('name')?.errors?.['minlength']">First Name must be at least 3 characters.</small>
@@ -20,7 +20,7 @@
         </section>
         <section>
             <label>Last Name*:</label>
-            <input type="text" formControlName="surname" [value]="customer?.surname" [disabled]="isViewMode"/>
+            <input type="text" formControlName="surname" [value]="customer?.surname" />
             <div *ngIf="customerForm.get('surname')?.invalid && (customerForm.get('surname')?.touched || customerForm.get('surname')?.dirty)">
                 <small class="error" *ngIf="customerForm.get('surname')?.errors?.['required']">Last Name is required.</small>
                 <small class="error" *ngIf="customerForm.get('surname')?.errors?.['minlength']">Last Name must be at least 3 characters.</small>
@@ -29,7 +29,7 @@
         </section>
         <section>
             <label>Phone Number*:</label>
-            <input type="text" formControlName="phoneNumber" [value]="customer?.phoneNumber" [disabled]="isViewMode"/>
+            <input type="text" formControlName="phoneNumber" [value]="customer?.phoneNumber" />
             <div *ngIf="customerForm.get('phoneNumber')?.invalid && (customerForm.get('phoneNumber')?.touched || customerForm.get('phoneNumber')?.dirty)">
                 <small class="error" *ngIf="customerForm.get('phoneNumber')?.errors?.['required']">Phone Number is required.</small>
                 <small class="error" *ngIf="customerForm.get('phoneNumber')?.errors?.['minlength']">Phone Number must be at least 8 characters.</small>
@@ -38,7 +38,7 @@
         </section>
         <section>
             <label>Email*:</label>
-            <input type="text" formControlName="email" [value]="customer?.email" [disabled]="isViewMode"/>
+            <input type="text" formControlName="email" [value]="customer?.email" />
             <div *ngIf="customerForm.get('email')?.invalid && (customerForm.get('email')?.touched || customerForm.get('email')?.dirty)">
                 <small class="error" *ngIf="customerForm.get('email')?.errors?.['required']">Email is required.</small>
                 <small class="error" *ngIf="customerForm.get('email')?.errors?.['email']">Invalid email format.</small>
