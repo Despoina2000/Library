@@ -60,9 +60,9 @@ export class CustomerPlatformComponent {
           if(customerData){
             this.customer= customerData;
             this.customerForm.patchValue({
-              firstName: customerData.name,
-              lastName: customerData.surname,
-              phonenumber: customerData.phoneNumber,
+              name: customerData.name,
+              surname: customerData.surname,
+              phoneNumber: customerData.phoneNumber,
               email: customerData.email
             });
           }
