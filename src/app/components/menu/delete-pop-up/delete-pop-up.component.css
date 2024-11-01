@@ -1,0 +1,23 @@
+.btn{
+    margin: 10px;
+}
+
+.default_button{
+    background-color: cyan; 
+    color:black;
+}
+
+.delete_button{
+    background-color: red;
+}
+
+h2{
+    color:white;
+    margin: 20px;
+}
+
+mat-dialog-content{
+    height: 100px;
+    padding-top: 10%;
+    background-color:gray;
+}

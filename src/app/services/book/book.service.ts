@@ -31,9 +31,12 @@ export class BookService {
   }
 
   updateBook(bookData: Book): Observable<Book>|null {
-   if(this.getBook(bookData._id)){
-      return this.http.put<Book>(`${this.endpoint}/${bookData._id}`, bookData);
+    if(bookData._id){
+      if(this.getBook(bookData._id)){
+        return this.http.put<Book>(`${this.endpoint}/${bookData._id}`, bookData);
+      }
     }
+   
     return null;
   }
 

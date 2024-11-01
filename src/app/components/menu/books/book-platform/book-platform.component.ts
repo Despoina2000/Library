@@ -9,6 +9,7 @@ import { DatePipe, NgFor, NgIf } from '@angular/common';
   selector: 'app-book-platform',
   standalone: true,
   imports: [NgIf,NgFor,ReactiveFormsModule,DatePipe],
+  providers: [ DatePipe],
   templateUrl: './book-platform.component.html',
   styleUrl: './book-platform.component.css'
 })
@@ -16,7 +17,7 @@ export class BookPlatformComponent {
   bookTypes: string[] = ['Fiction', 'Non-Fiction', 'Sci-Fi', 'Biography'];
   bookForm: FormGroup=new FormGroup({
     name: new FormControl(undefined,[Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
-    year: new FormControl(undefined,[Validators.required,Validators.min(1900),Validators.max(2024)]),
+    year: new FormControl(undefined,[Validators.required,Validators.min(1900),Validators.max(new Date().getFullYear())]),
     type: new FormControl('', [Validators.required]),
     author: new FormControl(undefined,[Validators.required,Validators.minLength(3),Validators.maxLength(15)]),
     createdOn: new FormControl(new Date(), [Validators.required])
@@ -29,7 +30,8 @@ export class BookPlatformComponent {
   constructor(
     private bookService: BookService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private datePipe: DatePipe
   ) {}
 
   ngOnInit(): void {
@@ -50,6 +52,8 @@ export class BookPlatformComponent {
     if (bookId) {
       this.bookService.getBook(bookId).subscribe(
         (bookData: Book|null) => {
+          console.log(bookData);
+          const formattedDate = this.datePipe.transform(bookData?.createdOn, 'yyyy-MM-dd');
           if(bookData){
             this.book= bookData;
             this.bookForm.patchValue({
@@ -57,7 +61,7 @@ export class BookPlatformComponent {
              year: bookData.year,
               type: bookData.type,
               author: bookData.author,
-              createdOn:bookData.createdOn
+              createdOn: formattedDate
             });
           }
           else{
@@ -75,8 +79,14 @@ export class BookPlatformComponent {
   addBook() {
     if (this.bookForm.valid) {
       const bookData: Book = {
-        ...this.bookForm.value,
-        _id: Math.random().toString(16).slice(2, 14)
+        //...this.bookForm.value,
+            name: this.bookForm.get('name')?.value,
+            year: this.bookForm.get('year')?.value,
+            type: this.bookForm.get('type')?.value,
+            author: this.bookForm.get('author')?.value,
+            createdOn: new Date(this.bookForm.get('createdOn')?.value).toISOString(),
+            available:true
+        
       };
 
       this.bookService.addBook(bookData).subscribe(

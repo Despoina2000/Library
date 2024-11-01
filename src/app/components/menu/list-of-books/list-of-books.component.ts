@@ -74,6 +74,8 @@ constructor(private bookService:BookService,private dialog: MatDialog,private ro
       );
     }
   }
+
+
   
   editBook(bookId:string){
     this.router.navigate(['books/edit/'+bookId]);
