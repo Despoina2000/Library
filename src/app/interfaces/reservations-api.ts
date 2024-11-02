@@ -2,7 +2,7 @@ import { Book } from "./books-api";
 import { Customer } from "./customers-api";
 
 export interface Reservation{
-    //book name, customer name, status, reserved On,  return By
+    _id:string;
     book: Book;//Book interface 
     customer: Customer;//Customer interface
     status: string;
