@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef,MatDialogContent,MatDialogActions } from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-delete-pop-up',
   standalone: true,
-  imports: [MatDialogContent,MatDialogActions,MatIconModule],
+  imports: [MatDialogContent,MatDialogActions,MatIconModule,MatButtonModule],
   templateUrl: './delete-pop-up.component.html',
   styleUrl: './delete-pop-up.component.css'
 })

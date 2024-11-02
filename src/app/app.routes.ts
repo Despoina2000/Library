@@ -5,6 +5,7 @@ import { CustomersComponent } from './components/menu/customers/customers.compon
 import { ReservationsComponent } from './components/menu/reservations/reservations.component';
 import { CustomerPlatformComponent } from './components/menu/customers/customer-platform/customer-platform.component';
 import { BookPlatformComponent } from './components/menu/books/book-platform/book-platform.component';
+import { ReservationPlatformComponent } from './components/menu/reservations/reservation-platform/reservation-platform.component';
 
 
 export const routes: Routes = [
@@ -37,6 +38,9 @@ export const routes: Routes = [
     },
     {
         path:'reservations', component:ReservationsComponent
+    },
+    {
+        path:'reservations/add', component:ReservationPlatformComponent
     },
     { 
         path: '', redirectTo: '/', pathMatch: 'full'

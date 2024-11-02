@@ -4,11 +4,12 @@ import { Book } from '../../../../interfaces/books-api';
 import { BookService } from '../../../../services/book/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DatePipe, NgFor, NgIf } from '@angular/common';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-book-platform',
   standalone: true,
-  imports: [NgIf,NgFor,ReactiveFormsModule,DatePipe],
+  imports: [NgIf,NgFor,ReactiveFormsModule,DatePipe, MatButtonModule],
   providers: [ DatePipe],
   templateUrl: './book-platform.component.html',
   styleUrl: './book-platform.component.css'

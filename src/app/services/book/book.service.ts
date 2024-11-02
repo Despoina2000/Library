@@ -25,6 +25,15 @@ export class BookService {
     );
   }
 
+  getBookByName(title: string): Observable<Book|null> {
+    return this.getAllBooks().pipe(
+      map((books) => {
+        // Find the book with the matching title, or return null if not found
+        return books?.find(book => book.name === title) || null;
+      })
+    );
+  }
+
   addBook(bookData: Book): Observable<Book> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post<Book>(this.endpoint, bookData, { headers });

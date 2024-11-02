@@ -4,11 +4,12 @@ import { FormControl, FormGroup,ReactiveFormsModule, Validators } from '@angular
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../../../../services/customer/customer.service';
 import { Customer } from '../../../../interfaces/customers-api';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-customer-platform',
   standalone: true,
-  imports: [ReactiveFormsModule,NgIf],
+  imports: [ReactiveFormsModule,NgIf, MatButtonModule],
   templateUrl: './customer-platform.component.html',
   styleUrl: './customer-platform.component.css'
 })

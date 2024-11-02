@@ -1,13 +1,16 @@
 <h1>Reservation List</h1>
+<button mat-flat-button class="btn default_button" style="margin: 5%;" (click)="addReservation()">
+  <mat-icon>add</mat-icon> Add new reservations
+</button>
 @if(reservations.length>0){
     <table mat-table [dataSource]="reservations" class="mat-elevation-z8">
         <ng-container matColumnDef="book_name">
-          <th mat-header-cell *matHeaderCellDef> Book </th>
+          <th mat-header-cell *matHeaderCellDef> Title </th>
           <td mat-cell *matCellDef="let element"> {{element.book.name}} </td>
         </ng-container>
       
         <ng-container matColumnDef="customer_name">
-          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <th mat-header-cell *matHeaderCellDef> Full Name </th>
           <td mat-cell *matCellDef="let element"> {{element.customer.name}} {{element.customer.surname}} </td>
         </ng-container>
       
@@ -37,7 +40,7 @@
       </table>
 }
 @else {
-    <p>No customers available</p>
+    <p>No reservations available</p>
 }
 
 

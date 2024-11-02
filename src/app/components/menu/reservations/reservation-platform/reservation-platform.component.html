@@ -1,1 +1,35 @@
-<p>reservation-platform works!</p>
+<h1>Create new Reservation!</h1>
+
+<fieldset>
+    <legend>Personal Info:</legend>
+    <form [formGroup]="reservationForm">
+        <section>
+            <label>Book Title*:</label>
+            <input type="text" formControlName="name" [value]="null" />
+            <div *ngIf="reservationForm.get('name')?.invalid && (reservationForm.get('name')?.touched || reservationForm.get('name')?.dirty)">
+                <small class="error" *ngIf="reservationForm.get('name')?.errors?.['required']">First Name is required.</small>
+                <small class="error" *ngIf="reservationForm.get('name')?.errors?.['minlength']">First Name must be at least 3 characters.</small>
+                <small class="error" *ngIf="reservationForm.get('name')?.errors?.['maxlength']">First Name cannot exceed 15 characters.</small>
+              </div>
+        </section>
+        <section>
+            <label>Customer Name*:</label>
+            <input type="text" formControlName="surname" />
+            <div *ngIf="reservationForm.get('surname')?.invalid && (reservationForm.get('surname')?.touched || reservationForm.get('surname')?.dirty)">
+                <small class="error" *ngIf="reservationForm.get('surname')?.errors?.['required']">Last Name is required.</small>
+                <small class="error" *ngIf="reservationForm.get('surname')?.errors?.['minlength']">Last Name must be at least 3 characters.</small>
+                <small class="error" *ngIf="reservationForm.get('surname')?.errors?.['maxlength']">Last Name cannot exceed 15 characters.</small>
+              </div>
+        </section>
+        <section>
+            <label for="createdOn">Created On:</label>
+            <input type="date" id="createdOn" formControlName="createdOn" />
+          </section>
+        
+            <button mat-flat-button class="default_button" [disabled]="reservationForm.invalid" (click)="addReservation()">
+                Submit
+             </button>
+       
+        
+    </form>
+</fieldset>
