@@ -13,11 +13,12 @@
 
 h2{
     color:white;
+    background-color:red;
     margin: 20px;
 }
 
 mat-dialog-content{
     height: 100px;
     padding-top: 10%;
-    background-color:gray;
+    
 }

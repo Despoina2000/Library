@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Reservation } from '../../interfaces/reservations-api';
+import { ReservationData } from '../../interfaces/reservation-data-api';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +15,15 @@ export class ReservationService {
 
   getAllReservations(): Observable<Array<Reservation>>{
     return this.http.get<Array<Reservation>>(this.endpoint);
+  }
+
+  addReservation(reservationData: ReservationData):  Observable<ReservationData>{
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<ReservationData>(this.endpoint, reservationData, { headers });
+  }
+
+  completeReservation(reservationId:string):Observable<void>|null{
+
+      return this.http.post<any>(`${this.endpoint}/${reservationId}/complete`,null);
   }
 }

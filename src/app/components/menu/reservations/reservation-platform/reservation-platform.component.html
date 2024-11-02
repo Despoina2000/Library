@@ -5,25 +5,32 @@
     <form [formGroup]="reservationForm">
         <section>
             <label>Book Title*:</label>
-            <input type="text" formControlName="name" [value]="null" />
-            <div *ngIf="reservationForm.get('name')?.invalid && (reservationForm.get('name')?.touched || reservationForm.get('name')?.dirty)">
-                <small class="error" *ngIf="reservationForm.get('name')?.errors?.['required']">First Name is required.</small>
-                <small class="error" *ngIf="reservationForm.get('name')?.errors?.['minlength']">First Name must be at least 3 characters.</small>
-                <small class="error" *ngIf="reservationForm.get('name')?.errors?.['maxlength']">First Name cannot exceed 15 characters.</small>
+            <select formControlName="bookId" id="bookId">
+                <option *ngFor="let book of bookMap| keyvalue" [value]="book.key">
+                {{ book.value }}
+                </option>
+            </select>
+            <div *ngIf="reservationForm.get('bookId')?.invalid && (reservationForm.get('bookId')?.touched || reservationForm.get('bookId')?.dirty)">
+                <small class="error" *ngIf="reservationForm.get('bookId')?.errors?.['required']">Book Title is required.</small>
               </div>
         </section>
         <section>
-            <label>Customer Name*:</label>
-            <input type="text" formControlName="surname" />
-            <div *ngIf="reservationForm.get('surname')?.invalid && (reservationForm.get('surname')?.touched || reservationForm.get('surname')?.dirty)">
-                <small class="error" *ngIf="reservationForm.get('surname')?.errors?.['required']">Last Name is required.</small>
-                <small class="error" *ngIf="reservationForm.get('surname')?.errors?.['minlength']">Last Name must be at least 3 characters.</small>
-                <small class="error" *ngIf="reservationForm.get('surname')?.errors?.['maxlength']">Last Name cannot exceed 15 characters.</small>
+            <label for="customerId">Select Customer*:</label>
+            <select formControlName="customerId" id="customerId">
+                <option *ngFor="let customer of customerMap| keyvalue" [value]="customer.key">
+                {{ customer.value }}
+                </option>
+            </select>
+            <div *ngIf="reservationForm.get('customerId')?.invalid && (reservationForm.get('customerId')?.touched || reservationForm.get('customerId')?.dirty)">
+                <small class="error" *ngIf="reservationForm.get('customerId')?.errors?.['required']">Customer is required.</small>
               </div>
         </section>
         <section>
-            <label for="createdOn">Created On:</label>
-            <input type="date" id="createdOn" formControlName="createdOn" />
+            <label for="returnBy">Return by:</label>
+            <input type="date" id="returnBy" formControlName="returnBy" />
+            <div *ngIf="reservationForm.get('returnBy')?.invalid && (reservationForm.get('returnBy')?.touched || reservationForm.get('returnBy')?.dirty)">
+                <small class="error" *ngIf="reservationForm.get('returnBy')?.errors?.['required']">Return by is required.</small>
+              </div>
           </section>
         
             <button mat-flat-button class="default_button" [disabled]="reservationForm.invalid" (click)="addReservation()">

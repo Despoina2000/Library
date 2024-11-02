@@ -34,5 +34,19 @@ export class ReservationsComponent {
     this.router.navigate(['reservations/add']);
   }
 
+  completeReservaiton(id:string){
+    if (id) {
+      this.reservationService.completeReservation(id)?.subscribe(
+        () => {
+          console.log('Reservation completed successfully');
+          this.router.navigate(['/reservations']);
+        },
+        (error: any) => {
+          console.error('Error completing reservation', error);
+        }
+      );
+    }
+  }
+
 
 }
