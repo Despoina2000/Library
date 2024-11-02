@@ -12,6 +12,19 @@ export const routes: Routes = [
     {
         path:'', component:HomeComponent
     },
+    // {
+    //     path:'books', component:BooksComponent, children:[
+    //         {
+    //             path:'add', component:BookPlatformComponent
+    //         },
+    //         {
+    //             path:'edit/:id', component:BookPlatformComponent
+    //         },
+    //         {
+    //             path:'delete/:id', component:BooksComponent
+    //         }
+    //     ]
+    // },
     {
         path:'books', component:BooksComponent
     },
