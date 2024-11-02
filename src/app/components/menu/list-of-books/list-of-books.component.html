@@ -33,7 +33,7 @@
                 </mat-card-content>
                 <mat-card-actions>
                     @if(isRentable){
-                        <button mat-flat-button>Rent</button>
+                        <button mat-flat-button (click)="book._id?reserveBook(book._id):null">Rent</button>
                     } 
                     @else {
                       <button class="btn default_button" mat-fab aria-label="edit" data-toggle="tooltip" data-placement="top" title="edit" (click)="book._id?editBook(book._id):null">

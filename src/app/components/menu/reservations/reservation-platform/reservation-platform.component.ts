@@ -23,6 +23,8 @@ bookMap: Map<string, string> = new Map();
 // Hash map to store [customer._id => customer.name+''+customer.surname]
 customerMap: Map<string, string> = new Map();
 
+bookId: string | null = null;
+
 
   reservationForm: FormGroup=new FormGroup({
     bookId: new FormControl(undefined,[Validators.required]),
@@ -41,6 +43,11 @@ customerMap: Map<string, string> = new Map();
   ngOnInit(): void {
     this.fetchBooks();
     this.fetchCustomers();
+    this.route.queryParams.subscribe(params => { 
+      this.reservationForm.patchValue({
+        bookId: params['bookId']
+      });
+    });
   }
 
   fetchBooks(): void {

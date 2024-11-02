@@ -81,4 +81,9 @@ constructor(private bookService:BookService,private dialog: MatDialog,private ro
     this.router.navigate(['books/edit/'+bookId]);
   }
 
+  reserveBook(bookId: string) {
+    // Navigate to `reservation/add` with the book ID as a query parameter
+    this.router.navigate(['reservations/add'], { queryParams: { bookId } });
+  }
+
 }
