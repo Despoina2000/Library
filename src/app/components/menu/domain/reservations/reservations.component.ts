@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Reservation } from '../../../interfaces/reservations-api';
-import { ReservationService } from '../../../services/reservation/reservation.service';
+import { Reservation } from '../../../../interfaces/reservations-api';
+import { ReservationService } from '../../../../services/reservation/reservation.service';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -27,7 +27,7 @@ export class ReservationsComponent {
     catch( HttpErrorResponse){
       this.reservations=[];
     }
-    
+
   }
 
   addReservation(){

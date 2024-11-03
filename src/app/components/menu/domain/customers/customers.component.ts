@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
-import { Customer } from '../../../interfaces/customers-api';
-import { CustomerService } from '../../../services/customer/customer.service';
+import { Customer } from '../../../../interfaces/customers-api';
+import { CustomerService } from '../../../../services/customer/customer.service';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { error } from 'console';
 import { Router } from '@angular/router';
-import { DeletePopUpComponent } from '../delete-pop-up/delete-pop-up.component';
+import { DeletePopUpComponent } from '../../../pop-up components/delete-pop-up/delete-pop-up.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -21,14 +21,14 @@ export class CustomersComponent {
   customers: Array<Customer>=[];
 
   constructor(private customerService: CustomerService,private router: Router, private dialog: MatDialog){
-    
+
       this.customerService.getAllCustomers().subscribe((data)=>{
         this.customers=data;
      },(error)=>{
       console.log(error);
       this.customers=[];
      });
-    
+
   }
 
   confirmDelete(customerId:string): void {

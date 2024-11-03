@@ -2,12 +2,12 @@ import { KeyValuePipe, NgFor, NgForOf, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators,ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
-import { BookService } from '../../../../services/book/book.service';
+import { BookService } from '../../../../../services/book/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Customer } from '../../../../interfaces/customers-api';
-import { CustomerService } from '../../../../services/customer/customer.service';
-import { ReservationService } from '../../../../services/reservation/reservation.service';
-import { ReservationData } from '../../../../interfaces/reservation-data-api';
+import { Customer } from '../../../../../interfaces/customers-api';
+import { CustomerService } from '../../../../../services/customer/customer.service';
+import { ReservationService } from '../../../../../services/reservation/reservation.service';
+import { ReservationData } from '../../../../../interfaces/reservation-data-api';
 
 @Component({
   selector: 'app-reservation-platform',
@@ -43,7 +43,7 @@ bookId: string | null = null;
   ngOnInit(): void {
     this.fetchBooks();
     this.fetchCustomers();
-    this.route.queryParams.subscribe(params => { 
+    this.route.queryParams.subscribe(params => {
       this.reservationForm.patchValue({
         bookId: params['bookId']
       });
@@ -57,7 +57,7 @@ bookId: string | null = null;
         books.forEach((book) => {
           if (book._id && book.available==true) {  // Ensure _id is defined and the book is available
             this.bookMap.set(book._id, book.name);
-            
+
           }
         });
       }
@@ -80,13 +80,13 @@ bookId: string | null = null;
 
   addReservation() {
     if (this.reservationForm.valid) {
-      
+
       const reservationData: ReservationData = {
         customerId: this.reservationForm.get('customerId')?.value,
         bookId:this.reservationForm.get('bookId')?.value,
         returnBy: new Date(this.reservationForm.get('returnBy')?.value).toISOString(),
-           
-        
+
+
       };
 
       this.reservationService.addReservation(reservationData).subscribe(
@@ -102,6 +102,6 @@ bookId: string | null = null;
       console.log('Form is invalid');
     }
   }
-    
+
 
 }

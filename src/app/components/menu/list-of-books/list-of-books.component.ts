@@ -8,7 +8,7 @@ import { Book } from '../../../interfaces/books-api';
 import { FormControl,FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { DeletePopUpComponent } from '../delete-pop-up/delete-pop-up.component';
+import { DeletePopUpComponent } from '../../pop-up components/delete-pop-up/delete-pop-up.component';
 import { BookService } from '../../../services/book/book.service';
 
 @Component({
@@ -76,7 +76,7 @@ constructor(private bookService:BookService,private dialog: MatDialog,private ro
   }
 
 
-  
+
   editBook(bookId:string){
     this.router.navigate(['books/edit/'+bookId]);
   }

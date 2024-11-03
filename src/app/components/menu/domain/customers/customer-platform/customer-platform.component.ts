@@ -2,8 +2,8 @@ import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup,ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CustomerService } from '../../../../services/customer/customer.service';
-import { Customer } from '../../../../interfaces/customers-api';
+import { CustomerService } from '../../../../../services/customer/customer.service';
+import { Customer } from '../../../../../interfaces/customers-api';
 import {MatButtonModule} from '@angular/material/button';
 
 @Component({
@@ -24,7 +24,7 @@ export class CustomerPlatformComponent {
   customerId: string | null = null;
   customer: Customer | null = null;
   isViewMode = false;
-  
+
 
   constructor(
     private customerService: CustomerService,
@@ -54,7 +54,7 @@ export class CustomerPlatformComponent {
 
   // Load customer data if we're in edit or view mode
   loadCustomerData(customerId: string | null): void {
-    
+
     if (customerId) {
       this.customerService.getCustomer(customerId).subscribe(
         (customerData: Customer|null) => {
@@ -70,7 +70,7 @@ export class CustomerPlatformComponent {
           else{
             this.customer=null
           }
-          
+
         },
         (error) => {
           console.error('Error loading customer data', error);

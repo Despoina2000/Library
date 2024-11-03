@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/menu/home/home.component';
-import { BooksComponent } from './components/menu/books/books.component';
-import { CustomersComponent } from './components/menu/customers/customers.component';
-import { ReservationsComponent } from './components/menu/reservations/reservations.component';
-import { CustomerPlatformComponent } from './components/menu/customers/customer-platform/customer-platform.component';
-import { BookPlatformComponent } from './components/menu/books/book-platform/book-platform.component';
-import { ReservationPlatformComponent } from './components/menu/reservations/reservation-platform/reservation-platform.component';
+import { BooksComponent } from './components/menu/domain/books/books.component';
+import { CustomersComponent } from './components/menu/domain/customers/customers.component';
+import { ReservationsComponent } from './components/menu/domain/reservations/reservations.component';
+import { CustomerPlatformComponent } from './components/menu/domain/customers/customer-platform/customer-platform.component';
+import { BookPlatformComponent } from './components/menu/domain/books/book-platform/book-platform.component';
+import { ReservationPlatformComponent } from './components/menu/domain/reservations/reservation-platform/reservation-platform.component';
 
 
 export const routes: Routes = [
@@ -55,7 +55,7 @@ export const routes: Routes = [
     {
         path:'reservations/add', component:ReservationPlatformComponent
     },
-    { 
+    {
         path: '', redirectTo: '/', pathMatch: 'full'
      } // Default route
 

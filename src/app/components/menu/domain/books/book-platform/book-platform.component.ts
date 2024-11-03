@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Book } from '../../../../interfaces/books-api';
-import { BookService } from '../../../../services/book/book.service';
+import { Book } from '../../../../../interfaces/books-api';
+import { BookService } from '../../../../../services/book/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DatePipe, NgFor, NgIf } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
@@ -26,7 +26,7 @@ export class BookPlatformComponent {
 
   bookId: string | null = null;
   book: Book | null = null;
-  
+
 
   constructor(
     private bookService: BookService,
@@ -47,9 +47,9 @@ export class BookPlatformComponent {
     });
   }
 
-  
+
   loadBookData(bookId: string | null): void {
-    
+
     if (bookId) {
       this.bookService.getBook(bookId).subscribe(
         (bookData: Book|null) => {
@@ -68,7 +68,7 @@ export class BookPlatformComponent {
           else{
             this.book=null
           }
-          
+
         },
         (error: any) => {
           console.error('Error loading book data', error);
@@ -87,7 +87,7 @@ export class BookPlatformComponent {
             author: this.bookForm.get('author')?.value,
             createdOn: new Date(this.bookForm.get('createdOn')?.value).toISOString(),
             available:true
-        
+
       };
 
       this.bookService.addBook(bookData).subscribe(

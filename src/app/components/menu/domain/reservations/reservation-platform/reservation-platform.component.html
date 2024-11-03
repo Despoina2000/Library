@@ -18,7 +18,7 @@
             <label for="customerId">Select Customer*:</label>
             <select formControlName="customerId" id="customerId">
                 <option *ngFor="let customer of customerMap| keyvalue" [value]="customer.key">
-                {{ customer.value }}
+                {{customer.key}} - {{ customer.value }}
                 </option>
             </select>
             <div *ngIf="reservationForm.get('customerId')?.invalid && (reservationForm.get('customerId')?.touched || reservationForm.get('customerId')?.dirty)">
@@ -32,11 +32,11 @@
                 <small class="error" *ngIf="reservationForm.get('returnBy')?.errors?.['required']">Return by is required.</small>
               </div>
           </section>
-        
+
             <button mat-flat-button class="default_button" [disabled]="reservationForm.invalid" (click)="addReservation()">
                 Submit
              </button>
-       
-        
+
+
     </form>
 </fieldset>
