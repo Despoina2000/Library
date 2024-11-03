@@ -1,0 +1,10 @@
+.filter{
+  border-color: black;
+}
+
+.cancel_button{
+  background-color: red !important;
+}
+.btn{
+  margin: 10px;
+}

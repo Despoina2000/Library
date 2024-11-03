@@ -29,13 +29,6 @@ export class BooksComponent {
   searchFilterFlag: boolean= false;
   constructor(private bookService:BookService,private router: Router, private activeRoute: ActivatedRoute,private dialog: MatDialog){
     this.loadBooks();
-   /*   this.bookService.getAllBooks().subscribe((data)=>{
-        this.books=data? data:[];
-        this.categories=[...new Set(data?.map(item => item.type))];
-     },(error)=>{
-      console.log(error);
-      this.books=[];
-     });*/
 
 
   }
@@ -59,23 +52,12 @@ export class BooksComponent {
     this.loadBooks();
   }
 
-
-
-  /*searchFilter(){
-    const dialogRef = this.dialog.open(SearchBookPopUpComponent);
-
-    dialogRef.afterClosed().subscribe(results => {
-      if (results) {
-        this.searchResults = results;
-      }
-    });
-  }*/
-
   searchFilter() {
     const dialogRef = this.dialog.open(SearchBookPopUpComponent);
-    this.searchFilterFlag=true;
+
     dialogRef.afterClosed().subscribe((results) => {
       if (results) {
+        this.searchFilterFlag=true;
         this.searchResults = results;
         if (this.searchResults.name) {
           // If a name is specified, use getBookByName to fetch matching books

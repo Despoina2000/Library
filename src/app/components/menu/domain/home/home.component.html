@@ -1,3 +1,34 @@
 <h1><img src="favicon.png" style="height:100px; width:100px;"> Welcome to Rocket Team!</h1>
 <br/>
-<app-list-of-books [books]="books" [categories]="categories" [isRentable]="true"></app-list-of-books>
+<button class="btn default_button" mat-flat-button aria-label="search" data-toggle="tooltip" data-placement="top" title="search" (click)="searchFilter()" >
+  <mat-icon>search</mat-icon> Search
+</button>
+@if(searchFilterFlag){
+  <button mat-flat-button class="btn cancel_button" style="margin: 5%;" (click)="resetBooks()">
+    <mat-icon>clear</mat-icon>Cancel Filter
+  </button>
+  <!--<section class="filter">
+    <p>Search options:</p>
+    <span *ngIf="searchResults.name">
+    Name: {{ searchResults.name }}
+  </span>
+    <span *ngIf="searchResults.author">
+    Author: {{ searchResults.author }}
+  </span>
+    <span *ngIf="searchResults.year">
+    Year: {{ searchResults.year }}
+  </span>
+    <span *ngIf="searchResults.createdFrom">
+    Created from date: {{ searchResults.createdFrom }}
+  </span>
+    <span *ngIf="searchResults.createdTo">
+    Created until date: {{ searchResults.createdTo }}
+  </span>
+    <button mat-flat-button class="btn cancel_button" style="margin: 5%;" (click)="resetBooks()">
+      <mat-icon>clear</mat-icon>Cancel Filter
+    </button>
+  </section>-->
+
+}
+<br>
+<app-list-of-books [books]="filteredBooks" [categories]="categories" [isRentable]="true"></app-list-of-books>
