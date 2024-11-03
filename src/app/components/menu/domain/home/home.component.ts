@@ -8,12 +8,13 @@ import {MatIcon} from "@angular/material/icon";
 import {SearchFilter} from '../../../../interfaces/search-filter';
 import {SearchBookPopUpComponent} from '../../search-book-pop-up/search-book-pop-up.component';
 import {MatDialog} from '@angular/material/dialog';
+import {NgIf} from '@angular/common';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-    imports: [ListOfBooksComponent, MatButton, MatIcon],
+    imports: [ListOfBooksComponent, MatButton, MatIcon, NgIf],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -25,18 +26,6 @@ export class HomeComponent {
   searchFilterFlag: boolean= false;
   constructor(private bookService:BookService,private dialog: MatDialog){
     this.loadBooks();
-     //  this.bookServise.getAllBooks().subscribe((data)=>{
-     //    data?.forEach(element => {
-     //      if(element.available==true){
-     //        this.books?.push(element);
-     //      }
-     //
-     //    });
-     //    this.categories=[...new Set(data?.map(item => item.type))];
-     // },(error)=>{
-     //  console.log(error);
-     //  this.books=[];
-     // });
   }
 
   loadBooks() {

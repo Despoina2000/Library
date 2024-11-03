@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {DatePipe, KeyValuePipe, NgForOf} from '@angular/common';
+import {DatePipe, KeyValuePipe, NgForOf, NgIf} from '@angular/common';
 import { Book } from '../../../../interfaces/books-api';
 import { BookService } from '../../../../services/book/book.service';
 import {MatCardModule} from '@angular/material/card';
@@ -17,7 +17,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 @Component({
   selector: 'app-books',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, DatePipe, ListOfBooksComponent, MatIconModule, KeyValuePipe, NgForOf, ReactiveFormsModule],
+  imports: [MatCardModule, MatButtonModule, DatePipe, ListOfBooksComponent, MatIconModule, KeyValuePipe, NgForOf, ReactiveFormsModule,NgIf],
   templateUrl: './books.component.html',
   styleUrl: './books.component.css',
 })
