@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {DatePipe, KeyValuePipe, NgForOf, NgIf} from '@angular/common';
-import { Book } from '../../../../interfaces/books-api';
+import { Book } from '../../../../interfaces/api/books-api';
 import { BookService } from '../../../../services/book/book.service';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
@@ -10,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {SearchBookPopUpComponent} from '../../search-book-pop-up/search-book-pop-up.component';
-import {SearchBookFilter} from '../../../../interfaces/search-book-filter';
+import {SearchBookFilter} from '../../../../interfaces/search-filter/search-book-filter';
 import {ReactiveFormsModule} from '@angular/forms';
 
 

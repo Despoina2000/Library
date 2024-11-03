@@ -4,7 +4,7 @@ import {MatButton, MatFabButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
 import {NgForOf, NgIf} from '@angular/common';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {SearchBookFilter} from '../../../interfaces/search-book-filter';
+import {SearchBookFilter} from '../../../interfaces/search-filter/search-book-filter';
 
 @Component({
   selector: 'app-search-book-pop-up',
@@ -33,7 +33,7 @@ export class SearchBookPopUpComponent {
   });
   constructor(
     public dialogRef: MatDialogRef<SearchBookPopUpComponent>,
-    
+
   ) {}
   onCancel(): void {
     this.dialogRef.close(null);

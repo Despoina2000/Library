@@ -4,7 +4,7 @@ import {MatButton, MatFabButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
 import {NgForOf, NgIf} from '@angular/common';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import { SearchCustomerFilter } from '../../../../../interfaces/search-customer-filter';
+import { SearchCustomerFilter } from '../../../../../interfaces/search-filter/search-customer-filter';
 
 
 @Component({
@@ -35,7 +35,7 @@ export class SearchCustomerPopUpComponent {
 
   constructor(
     public dialogRef: MatDialogRef<SearchCustomerPopUpComponent>,
-    
+
   ) {}
 
   onCancel(): void {

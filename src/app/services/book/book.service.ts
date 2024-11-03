@@ -1,7 +1,7 @@
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Book } from '../../interfaces/books-api';
+import { Book } from '../../interfaces/api/books-api';
 
 @Injectable({
   providedIn: 'root'

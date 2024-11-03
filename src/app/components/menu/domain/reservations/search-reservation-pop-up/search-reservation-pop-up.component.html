@@ -1,1 +1,47 @@
-<p>search-reservation-pop-up works!</p>
+<h2 mat-dialog-title>Search Filter:</h2>
+<mat-dialog-content>
+    <form [formGroup]="reservationForm">
+        <section>
+            <label>Id:</label>
+            <input type="text" formControlName="_id"  />
+        </section>
+        <section>
+            <label>First Name:</label>
+            <input type="text" formControlName="name"  />
+            <div *ngIf="reservationForm.get('name')?.invalid && (reservationForm.get('name')?.touched || reservationForm.get('name')?.dirty)">
+                <small class="error" *ngIf="reservationForm.get('name')?.errors?.['minlength']">First Name must be at least 3 characters.</small>
+                <small class="error" *ngIf="reservationForm.get('name')?.errors?.['maxlength']">First Name cannot exceed 15 characters.</small>
+              </div>
+        </section>
+        <section>
+            <label>Last Name:</label>
+            <input type="text" formControlName="surname"  />
+            <div *ngIf="reservationForm.get('surname')?.invalid && (reservationForm.get('surname')?.touched || reservationForm.get('surname')?.dirty)">
+                <small class="error" *ngIf="reservationForm.get('surname')?.errors?.['minlength']">Last Name must be at least 3 characters.</small>
+                <small class="error" *ngIf="reservationForm.get('surname')?.errors?.['maxlength']">Last Name cannot exceed 15 characters.</small>
+              </div>
+        </section>
+        <section>
+            <label>Phone Number:</label>
+            <input type="text" formControlName="phoneNumber"  />
+            <div *ngIf="reservationForm.get('phoneNumber')?.invalid && (reservationForm.get('phoneNumber')?.touched || reservationForm.get('phoneNumber')?.dirty)">
+                <small class="error" *ngIf="reservationForm.get('phoneNumber')?.errors?.['minlength']">Phone Number must be at least 8 characters.</small>
+                <small *ngIf="reservationForm.get('phoneNumber')?.errors?.['pattern']">Invalid phone number format.</small>
+              </div>
+        </section>
+        <section>
+            <label>Email:</label>
+            <input type="text" formControlName="email"  />
+            <div *ngIf="reservationForm.get('email')?.invalid && (reservationForm.get('email')?.touched || reservationForm.get('email')?.dirty)">
+                <small class="error" *ngIf="reservationForm.get('email')?.errors?.['required']">Email is required.</small>
+                <small class="error" *ngIf="reservationForm.get('email')?.errors?.['email']">Invalid email format.</small>
+              </div>
+        </section>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-fab extended class="btn cancel_button" (click)="onCancel()"><mat-icon>clear</mat-icon>Cancel</button>
+  <button mat-fab extended class="btn default_button" (click)="searchFilter()"><mat-icon>search</mat-icon>Search...</button>
+</mat-dialog-actions>
+
+

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Reservation } from '../../../../interfaces/reservations-api';
+import { Reservation } from '../../../../interfaces/api/reservations-api';
 import { ReservationService } from '../../../../services/reservation/reservation.service';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';

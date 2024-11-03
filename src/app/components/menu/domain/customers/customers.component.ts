@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
-import { Customer } from '../../../../interfaces/customers-api';
+import { Customer } from '../../../../interfaces/api/customers-api';
 import { CustomerService } from '../../../../services/customer/customer.service';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -8,7 +8,7 @@ import { error } from 'console';
 import { Router } from '@angular/router';
 import { DeletePopUpComponent } from '../../../pop-up components/delete-pop-up/delete-pop-up.component';
 import { MatDialog } from '@angular/material/dialog';
-import { SearchCustomerFilter } from '../../../../interfaces/search-customer-filter';
+import { SearchCustomerFilter } from '../../../../interfaces/search-filter/search-customer-filter';
 import { SearchCustomerPopUpComponent } from './search-customer-pop-up/search-customer-pop-up.component';
 import { NgIf } from '@angular/common';
 
@@ -28,7 +28,7 @@ export class CustomersComponent {
 
   constructor(private customerService: CustomerService,private router: Router, private dialog: MatDialog){
     this.loadCustomers();
-      
+
 
   }
 
@@ -41,7 +41,7 @@ export class CustomersComponent {
     this.customers=[];
     this.filteredCustomers=[]
    });
-    
+
   }
 
   resetCustomers(){
@@ -55,11 +55,11 @@ export class CustomersComponent {
     dialogRef.afterClosed().subscribe((results) => {
 
       this.searchFilterFlag = true;
-      
+
       this.searchResults=results;
-      
+
       this.applyAdditionalFilters();
-      
+
   });
 }
 

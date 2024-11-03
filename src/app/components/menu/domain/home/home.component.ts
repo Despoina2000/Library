@@ -1,11 +1,11 @@
 import { Component,signal } from '@angular/core';
-import { Book } from '../../../../interfaces/books-api';
+import { Book } from '../../../../interfaces/api/books-api';
 import { BookService } from '../../../../services/book/book.service';
 import { ListOfBooksComponent } from '../../list-of-books/list-of-books.component';
 import { error } from 'console';
 import {MatButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
-import {SearchBookFilter} from '../../../../interfaces/search-book-filter';
+import {SearchBookFilter} from '../../../../interfaces/search-filter/search-book-filter';
 import {SearchBookPopUpComponent} from '../../search-book-pop-up/search-book-pop-up.component';
 import {MatDialog} from '@angular/material/dialog';
 import {NgIf} from '@angular/common';

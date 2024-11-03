@@ -4,10 +4,10 @@ import { FormControl, FormGroup, Validators,ReactiveFormsModule } from '@angular
 import {MatButtonModule} from '@angular/material/button';
 import { BookService } from '../../../../../services/book/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Customer } from '../../../../../interfaces/customers-api';
+import { Customer } from '../../../../../interfaces/api/customers-api';
 import { CustomerService } from '../../../../../services/customer/customer.service';
 import { ReservationService } from '../../../../../services/reservation/reservation.service';
-import { ReservationData } from '../../../../../interfaces/reservation-data-api';
+import { ReservationData } from '../../../../../interfaces/api/reservation-data-api';
 
 @Component({
   selector: 'app-reservation-platform',

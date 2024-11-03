@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Book } from '../../../../../interfaces/books-api';
+import { Book } from '../../../../../interfaces/api/books-api';
 import { BookService } from '../../../../../services/book/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DatePipe, NgFor, NgIf } from '@angular/common';

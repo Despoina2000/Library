@@ -22,14 +22,14 @@
     <span *ngIf="searchResults.phoneNumber">
     Phone: {{ searchResults.phoneNumber }} ||
   </span>
-    <button mat-flat-button class="btn cancel_button" style="margin: 5%;" (click)="resetCustomers()">
+    <button mat-flat-button class="btn cancel_button"  (click)="resetCustomers()">
       <mat-icon>clear</mat-icon>Cancel Filter
     </button>
   </section>
 
 }
 <br>
-<button mat-flat-button class="btn default_button" style="margin-bottom: 5%;" (click)="addCustomer()">
+<button mat-flat-button class="btn default_button"  (click)="addCustomer()">
   <mat-icon>add</mat-icon> Add new customer
 </button>
 @if(customers.length>0){

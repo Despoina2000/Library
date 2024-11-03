@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup,ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../../../../../services/customer/customer.service';
-import { Customer } from '../../../../../interfaces/customers-api';
+import { Customer } from '../../../../../interfaces/api/customers-api';
 import {MatButtonModule} from '@angular/material/button';
 
 @Component({
