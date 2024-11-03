@@ -1,4 +1,4 @@
-export interface SearchFilter{
+export interface SearchBookFilter{
   name?: string;
   year?: number;
   author?: string;

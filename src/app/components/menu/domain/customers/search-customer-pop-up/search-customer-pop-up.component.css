@@ -1,0 +1,36 @@
+.btn{
+    margin: 10px;
+  }
+  
+  .default_button{
+    background-color: cyan;
+    color:black;
+  }
+  
+  .cancel_button{
+    background-color: red;
+  }
+  
+  h2{
+    color:white;
+    margin: 20px;
+  }
+  
+  mat-dialog-content{
+    padding-top: 10%;
+  
+  }
+  
+  section{
+    margin: 5px;
+  }
+  
+  label{
+    margin-right: 5px;
+  }
+  
+  input{
+    background-color: #444444;
+    border-color: white;
+    color: white;
+  }

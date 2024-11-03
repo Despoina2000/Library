@@ -10,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {SearchBookPopUpComponent} from '../../search-book-pop-up/search-book-pop-up.component';
-import {SearchFilter} from '../../../../interfaces/search-filter';
+import {SearchBookFilter} from '../../../../interfaces/search-book-filter';
 import {ReactiveFormsModule} from '@angular/forms';
 
 
@@ -25,7 +25,7 @@ export class BooksComponent {
   books: Array<Book>= [];
   filteredBooks: Array<Book> = [];
   categories: Array<string> = [];
-  searchResults: SearchFilter = {};
+  searchResults: SearchBookFilter = {};
   searchFilterFlag: boolean= false;
   constructor(private bookService:BookService,private router: Router, private activeRoute: ActivatedRoute,private dialog: MatDialog){
     this.loadBooks();

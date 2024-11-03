@@ -5,7 +5,7 @@ import { ListOfBooksComponent } from '../../list-of-books/list-of-books.componen
 import { error } from 'console';
 import {MatButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
-import {SearchFilter} from '../../../../interfaces/search-filter';
+import {SearchBookFilter} from '../../../../interfaces/search-book-filter';
 import {SearchBookPopUpComponent} from '../../search-book-pop-up/search-book-pop-up.component';
 import {MatDialog} from '@angular/material/dialog';
 import {NgIf} from '@angular/common';
@@ -22,7 +22,7 @@ export class HomeComponent {
   books: Array<Book>= [];
   filteredBooks: Array<Book> = [];
   categories: Array<string> = [];
-  searchResults: SearchFilter = {};
+  searchResults: SearchBookFilter = {};
   searchFilterFlag: boolean= false;
   constructor(private bookService:BookService,private dialog: MatDialog){
     this.loadBooks();

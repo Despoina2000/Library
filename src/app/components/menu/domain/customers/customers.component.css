@@ -10,3 +10,11 @@
 .delete_button{
     background-color: red;
 }
+
+.filter{
+    border-color: black;
+  }
+  
+  .cancel_button{
+    background-color: red !important;
+  }
