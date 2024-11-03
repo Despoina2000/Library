@@ -44,9 +44,11 @@ bookId: string | null = null;
     this.fetchBooks();
     this.fetchCustomers();
     this.route.queryParams.subscribe(params => {
-      this.reservationForm.patchValue({
-        bookId: params['bookId']
-      });
+      if(params['bookId']){
+        this.reservationForm.patchValue({
+          bookId: params['bookId']
+        });
+      }
     });
   }
 
@@ -55,7 +57,7 @@ bookId: string | null = null;
       if (books) {
         // Populate the bookMap with [book._id => book.name] entries
         books.forEach((book) => {
-          if (book._id && book.available==true) {  // Ensure _id is defined and the book is available
+          if (book._id && book.available) {  // Ensure _id is defined and the book is available
             this.bookMap.set(book._id, book.name);
 
           }

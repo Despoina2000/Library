@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Book } from '../../interfaces/books-api';
@@ -8,13 +8,14 @@ import { Book } from '../../interfaces/books-api';
 })
 export class BookService {
 
+
   endpoint: string='https://book-api-bx2r.onrender.com/books';
   constructor(private http: HttpClient) { }
 
   getAllBooks(): Observable<Array<Book>|null>{
-    return this.http.get<Array<Book>|null>(this.endpoint);
+    return this.http.get<Array<Book>|null>(this.endpoint,{params: new HttpParams().set('sort', 'asc')});
   }
-  
+
 
   getBook(bookId: string): Observable<Book|null> {
     return this.getAllBooks().pipe(
@@ -25,13 +26,9 @@ export class BookService {
     );
   }
 
-  getBookByName(title: string): Observable<Book|null> {
-    return this.getAllBooks().pipe(
-      map((books) => {
-        // Find the book with the matching title, or return null if not found
-        return books?.find(book => book.name === title) || null;
-      })
-    );
+  getBookByName(title: string): Observable<Array<Book>|null> {
+    const baseParams = new HttpParams().set('search', title);
+    return this.http.get<Array<Book>|null>(this.endpoint,{ params: baseParams.set('sort', 'asc') });
   }
 
   addBook(bookData: Book): Observable<Book> {
@@ -45,7 +42,7 @@ export class BookService {
         return this.http.put<Book>(`${this.endpoint}/${bookData._id}`, bookData);
       }
     }
-   
+
     return null;
   }
 

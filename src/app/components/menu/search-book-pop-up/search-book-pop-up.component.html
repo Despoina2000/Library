@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>Search Filter:</h2>
+<mat-dialog-content>
+  <form [formGroup]="bookForm">
+    <section>
+      <label>Title:</label>
+      <input type="text" formControlName="name" />
+      <div *ngIf="bookForm.get('name')?.invalid && (bookForm.get('name')?.touched || bookForm.get('name')?.dirty)">
+        <small class="error" *ngIf="bookForm.get('name')?.errors?.['minlength']">Title must be at least 3 characters.</small>
+        <small class="error" *ngIf="bookForm.get('name')?.errors?.['maxlength']">Title cannot exceed 15 characters.</small>
+      </div>
+    </section>
+    <section>
+      <label>Year:</label>
+      <input type="number" formControlName="year" />
+      <div *ngIf="bookForm.get('year')?.invalid && (bookForm.get('year')?.touched || bookForm.get('year')?.dirty)">
+        <small class="error" *ngIf="bookForm.get('year')?.errors?.['min']">Year must be greater or equal to 1900.</small>
+        <small class="error" *ngIf="bookForm.get('year')?.errors?.['max']">Year must be less or equalr to 2024.</small>
+      </div>
+    </section>
+    <section>
+      <label>Author:</label>
+      <input type="text" formControlName="author" />
+      <div *ngIf="bookForm.get('author')?.invalid && (bookForm.get('author')?.touched || bookForm.get('author')?.dirty)">
+        <small class="error" *ngIf="bookForm.get('author')?.errors?.['minlength']">Author must be at least 3 characters.</small>
+        <small class="error" *ngIf="bookForm.get('author')?.errors?.['maxlength']">Author cannot exceed 15 characters.</small>
+      </div>
+    </section>
+    <section>
+      <label for="createdFrom">Created From:</label>
+      <input type="date" id="createdFrom" formControlName="createdFrom" />
+    </section>
+    <section>
+      <label for="createdTo">Created To:</label>
+      <input type="date" id="createdTo" formControlName="createdTo" />
+    </section>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-fab extended class="btn cancel_button" (click)="onCancel()"><mat-icon>clear</mat-icon>Cancel</button>
+  <button mat-fab extended class="btn default_button" (click)="searchFilter()"><mat-icon>search</mat-icon>Search...</button>
+</mat-dialog-actions>

@@ -26,7 +26,7 @@
               </div>
         </section>
         <section>
-            <label for="returnBy">Return by:</label>
+            <label for="returnBy">Return by*:</label>
             <input type="date" id="returnBy" formControlName="returnBy" />
             <div *ngIf="reservationForm.get('returnBy')?.invalid && (reservationForm.get('returnBy')?.touched || reservationForm.get('returnBy')?.dirty)">
                 <small class="error" *ngIf="reservationForm.get('returnBy')?.errors?.['required']">Return by is required.</small>
