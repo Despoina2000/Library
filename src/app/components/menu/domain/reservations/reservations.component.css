@@ -2,6 +2,9 @@
     background-color: cyan; 
     color:black;
 }
+.btn{
+    margin: 10px;
+}
 
 button:disabled,
 button[disabled]{

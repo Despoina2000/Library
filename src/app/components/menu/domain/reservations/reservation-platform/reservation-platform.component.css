@@ -12,3 +12,97 @@ button[disabled]{
 button{
     margin-top: 20px;
 }
+
+h4, h5 {
+  color: rgb(1, 144, 157);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 25px;
+  row-gap: 15px;
+  }
+
+  select, input[type='text'],input[type='number'],input[type='date']  {
+    height: 3.4em;
+    line-height: 2;
+  }
+  select:first-of-type {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  select:last-of-type {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  select:focus,
+  select:active {
+    outline: 0;
+  }
+  select option {
+    background-color: rgb(1, 144, 157);
+    color: #fff;
+  }
+  
+  .input-group {
+    margin-bottom: 1em;
+    zoom: 1;
+  }
+  .input-group:before,
+  .input-group:after {
+    content: "";
+    display: table;
+  }
+  .input-group:after {
+    clear: both;
+  }
+  .input-group-icon {
+    position: relative;
+  }
+  .input-group-icon input {
+    padding-left: 4.4em;
+  }
+  .input-group-icon .input-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3.4em;
+    height: 3.4em;
+    line-height: 3.4em;
+    text-align: center;
+    pointer-events: none;
+  }
+  .input-group-icon .input-icon:after {
+    position: absolute;
+    top: 0.6em;
+    bottom: 0.6em;
+    left: 3.4em;
+    display: block;
+    border-right: 1px solid #e5e5e5;
+    content: "";
+    -webkit-transition: 0.35s ease-in-out;
+    -moz-transition: 0.35s ease-in-out;
+    -o-transition: 0.35s ease-in-out;
+    transition: 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+  }
+  .input-group-icon .input-icon i {
+    -webkit-transition: 0.35s ease-in-out;
+    -moz-transition: 0.35s ease-in-out;
+    -o-transition: 0.35s ease-in-out;
+    transition: 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+  }
+  
+  input:focus {
+    outline: 0;
+    border-color: cyan;
+  }
+  input:focus + .input-icon i {
+    color: cyan;
+  }
+  input:focus + .input-icon:after {
+    border-right-color: cyan;
+  }
+  

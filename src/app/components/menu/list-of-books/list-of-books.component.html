@@ -1,15 +1,17 @@
-<mat-button-toggle-group
-[formControl]="categoryControl"
-    name="ingredients"
-    aria-label="Ingredients"
-    [hideMultipleSelectionIndicator]="hideMultipleSelectionIndicator()"
-    value="all"
-    >
-  @for(category of categories;track $index){
-    <mat-button-toggle value="{{category}}">{{category}}</mat-button-toggle>
-  }
-  <mat-button-toggle value="all">All</mat-button-toggle>
-  </mat-button-toggle-group>
+<div class="toggle-group-container">
+  <mat-button-toggle-group
+  [formControl]="categoryControl"
+      name="ingredients"
+      aria-label="Ingredients"
+      [hideMultipleSelectionIndicator]="hideMultipleSelectionIndicator()"
+      value="all"
+      >
+    @for(category of categories;track $index){
+      <mat-button-toggle value="{{category}}">{{category}}</mat-button-toggle>
+    }
+    <mat-button-toggle value="all">All</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
 <div class="grid-container">
     @if(filteredBooks.length>0){
         @for(book of filteredBooks;track $index){

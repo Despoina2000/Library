@@ -18,9 +18,15 @@
 
     mat-button-toggle-group{
         background-color: gray;
-        margin: 5%;
         font-size: medium;
     }
+
+    .toggle-group-container {
+        display: flex;
+        margin-bottom: 10px;
+        justify-content: center; /* Centers the toggle group horizontally */
+        padding: 10px 0; /* Optional padding for spacing */
+      }
 
     .btn{
         margin: 10px;

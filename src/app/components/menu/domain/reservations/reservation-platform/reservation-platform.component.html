@@ -1,10 +1,10 @@
 <h1>Create new Reservation!</h1>
 
 <fieldset>
-    <legend>Reservation Info:</legend>
-    <form [formGroup]="reservationForm">
-        <section>
-            <label>Book Title*:</label>
+    <h5>Reservation Info:</h5>
+    <form [formGroup]="reservationForm" class="grid-container">
+        <section class="input-group input-group-icon">
+            <h4>Book Title*:</h4>
             <select formControlName="bookId" id="bookId">
                 <option *ngFor="let book of bookMap| keyvalue" [value]="book.key">
                 {{ book.value }}
@@ -14,8 +14,8 @@
                 <small class="error" *ngIf="reservationForm.get('bookId')?.errors?.['required']">Book Title is required.</small>
               </div>
         </section>
-        <section>
-            <label for="customerId">Select Customer*:</label>
+        <section class="input-group input-group-icon">
+            <h4 for="customerId">Select Customer*:</h4>
             <select formControlName="customerId" id="customerId">
                 <option *ngFor="let customer of customerMap| keyvalue" [value]="customer.key">
                 {{customer.key}} - {{ customer.value }}
@@ -25,18 +25,16 @@
                 <small class="error" *ngIf="reservationForm.get('customerId')?.errors?.['required']">Customer is required.</small>
               </div>
         </section>
-        <section>
-            <label for="returnBy">Return by*:</label>
+        <section class="input-group input-group-icon">
+            <h4 for="returnBy">Return by*:</h4>
             <input type="date" id="returnBy" formControlName="returnBy" />
             <div *ngIf="reservationForm.get('returnBy')?.invalid && (reservationForm.get('returnBy')?.touched || reservationForm.get('returnBy')?.dirty)">
                 <small class="error" *ngIf="reservationForm.get('returnBy')?.errors?.['required']">Return by is required.</small>
               </div>
           </section>
 
-            <button mat-flat-button class="default_button" [disabled]="reservationForm.invalid" (click)="addReservation()">
-                Submit
-             </button>
-
-
     </form>
+    <button mat-flat-button class="default_button" [disabled]="reservationForm.invalid" (click)="addReservation()">
+        Submit
+     </button>
 </fieldset>

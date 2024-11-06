@@ -3,6 +3,9 @@
 <button class="btn default_button" mat-flat-button aria-label="search" data-toggle="tooltip" data-placement="top" title="search" (click)="searchFilter()" >
   <mat-icon>search</mat-icon> Search
 </button>
+<button mat-flat-button class="btn default_button" (click)="addBook()">
+  <mat-icon>add</mat-icon> Add new book
+</button>
 
 @if(searchFilterFlag){
 
@@ -30,8 +33,6 @@
 
 }
 
-<br>
-<button mat-flat-button class="btn default_button" style="margin: 5%;" (click)="addBook()">
-    <mat-icon>add</mat-icon> Add new book
-  </button>
+
+  <br>
 <app-list-of-books [books]="filteredBooks" [categories]="categories" [isRentable]="false"></app-list-of-books>

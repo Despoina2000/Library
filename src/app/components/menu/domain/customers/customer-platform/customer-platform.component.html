@@ -7,10 +7,10 @@
 }
 
 <fieldset>
-    <legend>Personal Info:</legend>
-    <form [formGroup]="customerForm">
-        <section>
-            <label>First Name*:</label>
+    <legend><h5> Personal Info:</h5></legend>
+    <form [formGroup]="customerForm" class="grid-container">
+        <section class="input-group input-group-icon">
+            <h4>First Name*:</h4>
             <input type="text" formControlName="name" [value]="customer?.name" />
             <div *ngIf="customerForm.get('name')?.invalid && (customerForm.get('name')?.touched || customerForm.get('name')?.dirty)">
                 <small class="error" *ngIf="customerForm.get('name')?.errors?.['required']">First Name is required.</small>
@@ -18,8 +18,8 @@
                 <small class="error" *ngIf="customerForm.get('name')?.errors?.['maxlength']">First Name cannot exceed 15 characters.</small>
               </div>
         </section>
-        <section>
-            <label>Last Name*:</label>
+        <section class="input-group input-group-icon">
+            <h4>Last Name*:</h4>
             <input type="text" formControlName="surname" [value]="customer?.surname" />
             <div *ngIf="customerForm.get('surname')?.invalid && (customerForm.get('surname')?.touched || customerForm.get('surname')?.dirty)">
                 <small class="error" *ngIf="customerForm.get('surname')?.errors?.['required']">Last Name is required.</small>
@@ -27,8 +27,8 @@
                 <small class="error" *ngIf="customerForm.get('surname')?.errors?.['maxlength']">Last Name cannot exceed 15 characters.</small>
               </div>
         </section>
-        <section>
-            <label>Phone Number*:</label>
+        <section class="input-group input-group-icon">
+            <h4>Phone Number*:</h4>
             <input type="text" formControlName="phoneNumber" [value]="customer?.phoneNumber" />
             <div *ngIf="customerForm.get('phoneNumber')?.invalid && (customerForm.get('phoneNumber')?.touched || customerForm.get('phoneNumber')?.dirty)">
                 <small class="error" *ngIf="customerForm.get('phoneNumber')?.errors?.['required']">Phone Number is required.</small>
@@ -36,20 +36,19 @@
                 <small *ngIf="customerForm.get('phoneNumber')?.errors?.['pattern']">Invalid phone number format.</small>
               </div>
         </section>
-        <section>
-            <label>Email*:</label>
+        <section class="input-group input-group-icon">
+            <h4>Email*:</h4>
             <input type="text" formControlName="email" [value]="customer?.email" />
             <div *ngIf="customerForm.get('email')?.invalid && (customerForm.get('email')?.touched || customerForm.get('email')?.dirty)">
                 <small class="error" *ngIf="customerForm.get('email')?.errors?.['required']">Email is required.</small>
                 <small class="error" *ngIf="customerForm.get('email')?.errors?.['email']">Invalid email format.</small>
               </div>
         </section>
-        @if(!isViewMode){
-            <button mat-flat-button class="default_button" [disabled]="customerForm.invalid" (click)="customerId? updateCustomer():addCustomer()">
-                Submit
-             </button>
-        }
-        
     </form>
+    @if(!isViewMode){
+        <button mat-flat-button class="default_button" [disabled]="customerForm.invalid" (click)="customerId? updateCustomer():addCustomer()">
+            Submit
+         </button>
+    }
 </fieldset>
 
