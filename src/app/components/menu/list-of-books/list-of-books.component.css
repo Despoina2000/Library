@@ -5,7 +5,9 @@
     row-gap: 15px;
     }
     mat-card-title{
+        font-size: 30px;
         color:white
+        
     }
     mat-card{
         color: black;
@@ -20,6 +22,9 @@
         background-color: gray;
         font-size: medium;
     }
+    mat-button-toggle{
+        font-size: 20px;
+    }
 
     .toggle-group-container {
         display: flex;
@@ -30,6 +35,7 @@
 
     .btn{
         margin: 10px;
+        font-size: 20px;
     }
     
     .default_button{
