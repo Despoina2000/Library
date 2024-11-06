@@ -5,31 +5,31 @@
 
 @if(searchFilterFlag){
 
-  <section class="filter">
+  <section class="alter info">
     <b>Search options:</b>
     <span *ngIf="searchResults._id">
-      Id: {{ searchResults._id }} ||
+      Id: {{ searchResults._id }} 
     </span> 
     <span *ngIf="searchResults.name">
-    Name: {{ searchResults.name }} ||
+    Name: {{ searchResults.name }} 
   </span>
     <span *ngIf="searchResults.surname">
-    Surname: {{ searchResults.surname }} ||
+    Surname: {{ searchResults.surname }} 
   </span>
     <span *ngIf="searchResults.email">
-    Email: {{ searchResults.email }} ||
+    Email: {{ searchResults.email }} 
   </span>
     <span *ngIf="searchResults.phoneNumber">
-    Phone: {{ searchResults.phoneNumber }} ||
+    Phone: {{ searchResults.phoneNumber }} 
   </span>
-    <button mat-flat-button class="btn cancel_button"  (click)="resetCustomers()">
-      <mat-icon>clear</mat-icon>Cancel Filter
+    <button mat-icon-button class="btn cancel_button" aria-label="cancel" data-toggle="tooltip" data-placement="top" title="cancel"  (click)="resetCustomers()">
+      <mat-icon>clear</mat-icon>
     </button>
   </section>
 
 }
 <br>
-<button mat-flat-button class="btn default_button"  (click)="addCustomer()">
+<button mat-flat-button class="btn default_button" style="margin: 5%;" (click)="addCustomer()">
   <mat-icon>add</mat-icon> Add new customer
 </button>
 @if(customers.length>0){

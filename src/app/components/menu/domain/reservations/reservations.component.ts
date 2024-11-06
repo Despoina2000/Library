@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrl: './reservations.component.css'
 })
 export class ReservationsComponent {
-  displayedColumns: string[] = [ 'book_name', 'customer_name', 'status','phone', 'reseved_on', 'return_by'];
+  displayedColumns: string[] = [ 'book_name', 'customer_name', 'status','phone', 'reseved_on', 'return_by','complete'];
   reservations: Array<Reservation>=[];
 
   constructor(private reservationService: ReservationService,private router: Router){

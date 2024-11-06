@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" >
   <a  [routerLink]="''" class="logo"> <img src="logo-no-background.png" style="height: 100px; width:400px;"></a>
-    <nav mat-tab-nav-bar [tabPanel]="tabPanel" style="margin: 0 auto;">
+    <nav mat-tab-nav-bar  [tabPanel]="tabPanel" style="margin: 0 auto;">
         <a mat-tab-link
          *ngFor="let link of links"
          [routerLink]="link.path"

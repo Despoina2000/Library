@@ -4,6 +4,8 @@ import { BookService } from '../../../../services/book/book.service';
 import { ListOfBooksComponent } from '../../list-of-books/list-of-books.component';
 import { error } from 'console';
 import {MatButton} from "@angular/material/button";
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 import {MatIcon} from "@angular/material/icon";
 import {SearchBookFilter} from '../../../../interfaces/search-filter/search-book-filter';
 import {SearchBookPopUpComponent} from '../../search-book-pop-up/search-book-pop-up.component';
@@ -14,7 +16,7 @@ import {NgIf} from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone: true,
-    imports: [ListOfBooksComponent, MatButton, MatIcon, NgIf],
+    imports: [ListOfBooksComponent, MatButton, MatIcon, NgIf, MatButtonModule, MatIconModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
