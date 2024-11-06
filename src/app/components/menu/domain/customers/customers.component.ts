@@ -50,7 +50,7 @@ export class CustomersComponent {
   }
 
   searchFilter() {
-    const dialogRef = this.dialog.open(SearchCustomerPopUpComponent);
+    const dialogRef = this.dialog.open(SearchCustomerPopUpComponent,{data: { existingFilters: this.searchResults  }});
 
     dialogRef.afterClosed().subscribe((results) => {
 
