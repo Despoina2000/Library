@@ -34,21 +34,21 @@ export class SearchBookPopUpComponent {
   // });
   constructor(
     public dialogRef: MatDialogRef<SearchBookPopUpComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { existingFilters: SearchBookFilter }
+    @Inject(MAT_DIALOG_DATA) public data: any
 
   ) {
     
     // Initialize form with existing filter values if they exist
     this.bookForm = new FormGroup({
-      name: new FormControl(data?.existingFilters?.name, [
+      name: new FormControl(this.data?.existingFilters?.name, [
         Validators.minLength(3),
         Validators.maxLength(15),
       ]),
-      year: new FormControl(data?.existingFilters?.year, [
+      year: new FormControl(this.data?.existingFilters?.year, [
         Validators.min(1900),
         Validators.max(new Date().getFullYear()),
       ]),
-      author: new FormControl(data?.existingFilters?.author, [
+      author: new FormControl(this.data?.existingFilters?.author, [
         Validators.minLength(3),
         Validators.maxLength(15),
       ]),

@@ -45,7 +45,7 @@ export class HomeComponent {
   }
 
   searchFilter() {
-    const dialogRef = this.dialog.open(SearchBookPopUpComponent);
+    const dialogRef = this.dialog.open(SearchBookPopUpComponent,{data: { existingFilters: this.searchResults  }});
 
     dialogRef.afterClosed().subscribe((results) => {
       if (results) {
@@ -94,7 +94,7 @@ export class HomeComponent {
         (!createdFromDate || bookCreatedDate >= createdFromDate) &&
         (!createdToDate || bookCreatedDate <= createdToDate);
 
-      return matchesYear && matchesAuthor && matchesDate;
+      return matchesYear && matchesAuthor && matchesDate&& book.available;
     });
   }
 
