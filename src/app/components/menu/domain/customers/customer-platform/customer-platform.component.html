@@ -9,7 +9,7 @@
 <fieldset>
     <legend><h5> Personal Info:</h5></legend>
     <form [formGroup]="customerForm" class="grid-container">
-        <section class="input-group input-group-icon">
+        <section class="input-group" >
             <h4>First Name*:</h4>
             <input type="text" formControlName="name" [value]="customer?.name" />
             <div *ngIf="customerForm.get('name')?.invalid && (customerForm.get('name')?.touched || customerForm.get('name')?.dirty)">
@@ -18,7 +18,7 @@
                 <small class="error" *ngIf="customerForm.get('name')?.errors?.['maxlength']">First Name cannot exceed 15 characters.</small>
               </div>
         </section>
-        <section class="input-group input-group-icon">
+        <section class="input-group">
             <h4>Last Name*:</h4>
             <input type="text" formControlName="surname" [value]="customer?.surname" />
             <div *ngIf="customerForm.get('surname')?.invalid && (customerForm.get('surname')?.touched || customerForm.get('surname')?.dirty)">
@@ -27,7 +27,7 @@
                 <small class="error" *ngIf="customerForm.get('surname')?.errors?.['maxlength']">Last Name cannot exceed 15 characters.</small>
               </div>
         </section>
-        <section class="input-group input-group-icon">
+        <section class="input-group">
             <h4>Phone Number*:</h4>
             <input type="text" formControlName="phoneNumber" [value]="customer?.phoneNumber" />
             <div *ngIf="customerForm.get('phoneNumber')?.invalid && (customerForm.get('phoneNumber')?.touched || customerForm.get('phoneNumber')?.dirty)">
@@ -36,7 +36,7 @@
                 <small *ngIf="customerForm.get('phoneNumber')?.errors?.['pattern']">Invalid phone number format.</small>
               </div>
         </section>
-        <section class="input-group input-group-icon">
+        <section class="input-group">
             <h4>Email*:</h4>
             <input type="text" formControlName="email" [value]="customer?.email" />
             <div *ngIf="customerForm.get('email')?.invalid && (customerForm.get('email')?.touched || customerForm.get('email')?.dirty)">

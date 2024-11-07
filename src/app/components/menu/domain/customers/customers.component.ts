@@ -108,7 +108,7 @@ export class CustomersComponent {
       this.customerService.deleteCustomer(customerId)?.subscribe(
         () => {
           console.log('Customer deleted successfully');
-          this.router.navigate(['/customers']);
+          window.location.reload();
         },
         (error) => {
           console.error('Error deleting customer', error);

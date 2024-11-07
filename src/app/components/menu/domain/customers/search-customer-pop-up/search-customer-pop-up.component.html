@@ -2,11 +2,11 @@
 <mat-dialog-content>
     <form [formGroup]="customerForm">
         <section>
-            <label>Id:</label>
+            <label>Id:</label><br>
             <input type="text" formControlName="_id"  />
         </section>
         <section>
-            <label>First Name:</label>
+            <label>Name:</label>
             <input type="text" formControlName="name"  />
             <div *ngIf="customerForm.get('name')?.invalid && (customerForm.get('name')?.touched || customerForm.get('name')?.dirty)">
                 <small class="error" *ngIf="customerForm.get('name')?.errors?.['minlength']">First Name must be at least 3 characters.</small>
@@ -14,7 +14,7 @@
               </div>
         </section>
         <section>
-            <label>Last Name:</label>
+            <label>Surname:</label>
             <input type="text" formControlName="surname"  />
             <div *ngIf="customerForm.get('surname')?.invalid && (customerForm.get('surname')?.touched || customerForm.get('surname')?.dirty)">
                 <small class="error" *ngIf="customerForm.get('surname')?.errors?.['minlength']">Last Name must be at least 3 characters.</small>
@@ -22,7 +22,7 @@
               </div>
         </section>
         <section>
-            <label>Phone Number:</label>
+            <label>Phone:</label>
             <input type="text" formControlName="phoneNumber"  />
             <div *ngIf="customerForm.get('phoneNumber')?.invalid && (customerForm.get('phoneNumber')?.touched || customerForm.get('phoneNumber')?.dirty)">
                 <small class="error" *ngIf="customerForm.get('phoneNumber')?.errors?.['minlength']">Phone Number must be at least 8 characters.</small>

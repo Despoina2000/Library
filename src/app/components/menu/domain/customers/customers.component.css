@@ -1,5 +1,14 @@
 .btn{
     margin: 10px;
+    font-size: x-large;
+}
+
+table{
+  margin-top: 2%;
+}
+
+th, td{
+  font-size: x-large;
 }
 
 .default_button{

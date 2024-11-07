@@ -1,6 +1,7 @@
 
 .btn{
   margin: 10px;
+  font-size: x-large;
 }
 
 .cancel_button{
@@ -9,6 +10,9 @@
 }
 
 .info {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Places button at the far right */
   padding: 15px;
   background-color: #d1ecf1;
   border-color: #bee5eb;

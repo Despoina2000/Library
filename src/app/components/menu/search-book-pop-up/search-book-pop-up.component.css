@@ -1,5 +1,6 @@
 .btn{
   margin: 10px;
+  font-size: x-large;
 }
 
 .default_button{
@@ -26,6 +27,7 @@ section{
 }
 
 label{
+  font-size: x-large;
   margin-right: 5px;
 }
 
@@ -33,5 +35,7 @@ input{
   background-color: #444444;
   border-color: white;
   color: white;
+  font-size: x-large;
+  margin: 5%;
 }
 

@@ -66,7 +66,7 @@ constructor(private bookService:BookService,private dialog: MatDialog,private ro
       this.bookService.deleteBook(bookId)?.subscribe(
         () => {
           console.log('Book deleted successfully');
-          this.router.navigate(['/books']);
+          window.location.reload();
         },
         (error) => {
           console.error('Error deleting book', error);

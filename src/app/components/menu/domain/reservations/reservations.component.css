@@ -4,6 +4,7 @@
 }
 .btn{
     margin: 10px;
+    font-size: x-large;
 }
 
 button:disabled,
@@ -11,4 +12,12 @@ button[disabled]{
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
+}
+
+table{
+  margin-top: 2%;
+}
+
+th, td{
+  font-size: x-large;
 }

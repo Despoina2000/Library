@@ -1,5 +1,6 @@
 .btn{
     margin: 10px;
+    font-size: x-large;
 }
 
 .default_button{
@@ -21,3 +22,4 @@ mat-dialog-content{
     padding-top: 10%;
     
 }
+

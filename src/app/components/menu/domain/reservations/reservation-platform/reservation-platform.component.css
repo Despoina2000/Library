@@ -1,5 +1,6 @@
 small{
-    color:red;
+  color:red;
+  font-size: large;
 }
 
 button:disabled,
@@ -11,6 +12,7 @@ button[disabled]{
 
 button{
     margin-top: 20px;
+    font-size: x-large;
 }
 
 h4, h5 {
@@ -27,19 +29,25 @@ h4, h5 {
   select, input[type='text'],input[type='number'],input[type='date']  {
     height: 3.4em;
     line-height: 2;
+    font-size: x-large;
+    padding-left: 5%;
   }
+
   select:first-of-type {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
   }
+
   select:last-of-type {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
   }
+
   select:focus,
   select:active {
     outline: 0;
   }
+
   select option {
     background-color: rgb(1, 144, 157);
     color: #fff;

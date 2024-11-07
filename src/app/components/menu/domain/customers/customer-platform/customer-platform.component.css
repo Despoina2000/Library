@@ -4,11 +4,12 @@
 }
 .error {
     color: red;
-    font-size: 12px;
+    font-size: large;
   }
 
-  small{
+  .small{
     color:red;
+    font-size: large;
 }
 
 button:disabled,
@@ -20,6 +21,7 @@ button[disabled]{
 
 button{
     margin-top: 20px;
+    font-size: x-large;
 }
 
 .grid-container {
@@ -31,7 +33,10 @@ button{
 
   input[type='text'],input[type='number']  {
     height: 3.4em;
+    padding-left: 5%;
     line-height: 2;
+    font-size: x-large;
+    
   }
 
   .input-group {
@@ -46,54 +51,12 @@ button{
   .input-group:after {
     clear: both;
   }
-  .input-group-icon {
-    position: relative;
-  }
-  .input-group-icon input {
-    padding-left: 4.4em;
-  }
-  .input-group-icon .input-icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3.4em;
-    height: 3.4em;
-    line-height: 3.4em;
-    text-align: center;
-    pointer-events: none;
-  }
-  .input-group-icon .input-icon:after {
-    position: absolute;
-    top: 0.6em;
-    bottom: 0.6em;
-    left: 3.4em;
-    display: block;
-    border-right: 1px solid #e5e5e5;
-    content: "";
-    -webkit-transition: 0.35s ease-in-out;
-    -moz-transition: 0.35s ease-in-out;
-    -o-transition: 0.35s ease-in-out;
-    transition: 0.35s ease-in-out;
-    transition: all 0.35s ease-in-out;
-  }
-  .input-group-icon .input-icon i {
-    -webkit-transition: 0.35s ease-in-out;
-    -moz-transition: 0.35s ease-in-out;
-    -o-transition: 0.35s ease-in-out;
-    transition: 0.35s ease-in-out;
-    transition: all 0.35s ease-in-out;
-  }
   
   input:focus {
     outline: 0;
     border-color: cyan;
   }
-  input:focus + .input-icon i {
-    color: cyan;
-  }
-  input:focus + .input-icon:after {
-    border-right-color: cyan;
-  }
+  
 
   h4, h5 {
     color: rgb(1, 144, 157);

@@ -39,7 +39,7 @@ export class ReservationsComponent {
       this.reservationService.completeReservation(id)?.subscribe(
         () => {
           console.log('Reservation completed successfully');
-          this.router.navigate(['/reservations']);
+          window.location.reload();
         },
         (error: any) => {
           console.error('Error completing reservation', error);

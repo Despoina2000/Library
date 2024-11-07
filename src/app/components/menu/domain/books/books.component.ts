@@ -53,7 +53,6 @@ export class BooksComponent {
   }
 
   searchFilter() {
-    console.log(this.searchResults);
     const dialogRef = this.dialog.open(SearchBookPopUpComponent,{
       data: { existingFilters: this.searchResults  }, // Pass the current filter values
     });
