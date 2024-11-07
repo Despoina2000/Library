@@ -21,3 +21,17 @@ table{
 th, td{
   font-size: x-large;
 }
+
+.warning {
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  color: #856404;
+}
+
+.alert {
+  padding: 15px;
+  border: 1px solid #ddd;
+  position: relative;
+  margin: 20px;
+  border-radius: 5px;
+}

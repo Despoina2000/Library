@@ -20,7 +20,10 @@ th, td{
     background-color: red;
 }
 
-
+.cancel_button{
+  color: red !important;
+  margin-left: 10px;
+}
   
   .alert {
     padding: 15px;
@@ -30,11 +33,12 @@ th, td{
     border-radius: 5px;
   }
   
-  .cancel_button{
-    color: red !important;
-    margin-left: 10px;
+
+  .warning {
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    color: #856404;
   }
-  
   .info {
     display: flex;
     align-items: center; /* Center items vertically */
