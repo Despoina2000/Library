@@ -17,7 +17,7 @@ import { NgIf } from '@angular/common';
   standalone: true,
   imports: [MatTableModule,MatIconModule,MatButtonModule,NgIf],
   templateUrl: './customers.component.html',
-  styleUrl: './customers.component.css'
+  styleUrls: ['./customers.component.css','../../../../css/button.css','../../../../css/alert.css','../../../../css/table.css']
 })
 export class CustomersComponent {
   displayedColumns: string[] = ['id', 'name', 'surname', 'email', 'phone', 'actions'];
@@ -58,11 +58,11 @@ export class CustomersComponent {
         this.searchFilterFlag = true;
 
         this.searchResults=results;
-  
+
         this.applyAdditionalFilters();
       }
 
-      
+
 
   });
 }

@@ -14,7 +14,7 @@ import { ReservationData } from '../../../../../interfaces/api/reservation-data-
   standalone: true,
   imports: [MatButtonModule,NgIf,NgFor,ReactiveFormsModule,KeyValuePipe],
   templateUrl: './reservation-platform.component.html',
-  styleUrl: './reservation-platform.component.css'
+  styleUrls: ['./reservation-platform.component.css','../../../../../css/button.css','../../../../../css/form.css']
 })
 export class ReservationPlatformComponent {
 // Hash map to store [book._id => book.name]

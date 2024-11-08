@@ -18,7 +18,7 @@ import {NgIf} from '@angular/common';
   standalone: true,
     imports: [ListOfBooksComponent, MatButton, MatIcon, NgIf, MatButtonModule, MatIconModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css','../../../../css/button.css','../../../../css/alert.css']
 })
 export class HomeComponent {
   books: Array<Book>= [];

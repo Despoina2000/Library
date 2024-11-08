@@ -1,7 +1,4 @@
-small{
-    color:red;
-    font-size: large;
-}
+
 
 .grid-container {
   display: grid;
@@ -9,61 +6,4 @@ small{
   column-gap: 25px;
   row-gap: 15px;
   }
-
-button:disabled,
-button[disabled]{
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-}
-
-h4,  h5 {
-  color: rgb(1, 144, 157);
-}
-
-button{
-    margin-top: 20px;
-    font-size: x-large;
-}
-
-select, input[type='text'],input[type='number'],input[type='date']  {
-  height: 3.4em;
-  line-height: 2;
-  padding-left: 5%;
-  font-size: x-large;
-}
-select:first-of-type {
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-select:last-of-type {
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
-select:focus,
-select:active {
-  outline: 0;
-}
-select option {
-  background-color: rgb(1, 144, 157);
-  color: #fff;
-}
-
-.input-group {
-  margin-bottom: 1em;
-  zoom: 1;
-}
-.input-group:before,
-.input-group:after {
-  content: "";
-  display: table;
-}
-.input-group:after {
-  clear: both;
-}
-
-input:focus {
-  outline: 0;
-  border-color: cyan;
-}
 

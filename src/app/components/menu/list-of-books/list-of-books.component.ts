@@ -16,7 +16,7 @@ import { BookService } from '../../../services/book/book.service';
   standalone: true,
   imports: [MatCardModule,MatButtonModule,DatePipe,MatButtonToggleModule, FormsModule, ReactiveFormsModule, MatIconModule],
   templateUrl: './list-of-books.component.html',
-  styleUrl: './list-of-books.component.css'
+  styleUrls: ['./list-of-books.component.css','../../../css/button.css','../../../css/alert.css']
 })
 export class ListOfBooksComponent {
   hideMultipleSelectionIndicator = signal(false);

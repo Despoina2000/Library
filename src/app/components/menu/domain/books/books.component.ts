@@ -19,7 +19,7 @@ import {ReactiveFormsModule} from '@angular/forms';
   standalone: true,
   imports: [MatCardModule, MatButtonModule, DatePipe, ListOfBooksComponent, MatIconModule, KeyValuePipe, NgForOf, ReactiveFormsModule,NgIf],
   templateUrl: './books.component.html',
-  styleUrl: './books.component.css',
+  styleUrls: ['./books.component.css','../../../../css/button.css','../../../../css/alert.css'],
 })
 export class BooksComponent {
   books: Array<Book>= [];

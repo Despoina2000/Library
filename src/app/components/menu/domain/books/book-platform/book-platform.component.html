@@ -46,9 +46,9 @@
         <section class="input-group">
             <h4 for="createdOn">Created On:</h4>
             <input type="date" id="createdOn" formControlName="createdOn" />
-        </section> 
+        </section>
     </form>
-    <button mat-flat-button class="default_button" [disabled]="bookForm.invalid" (click)="bookId? updateBook():addBook()">
+    <button mat-flat-button class="btn default_button" [disabled]="bookForm.invalid" (click)="bookId? updateBook():addBook()">
       Submit
    </button>
 </fieldset>

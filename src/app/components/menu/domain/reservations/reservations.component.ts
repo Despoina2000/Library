@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [MatTableModule, DatePipe, MatIconModule, MatButtonModule],
   templateUrl: './reservations.component.html',
-  styleUrl: './reservations.component.css'
+  styleUrls: ['./reservations.component.css','../../../../css/button.css','../../../../css/alert.css','../../../../css/table.css']
 })
 export class ReservationsComponent {
   displayedColumns: string[] = [ 'book_name', 'customer_name', 'status','phone', 'reseved_on', 'return_by','complete'];

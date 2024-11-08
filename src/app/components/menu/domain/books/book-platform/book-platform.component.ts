@@ -12,7 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [NgIf,NgFor,ReactiveFormsModule,DatePipe, MatButtonModule],
   providers: [ DatePipe],
   templateUrl: './book-platform.component.html',
-  styleUrl: './book-platform.component.css'
+  styleUrls: ['./book-platform.component.css','../../../../../css/button.css','../../../../../css/form.css']
 })
 export class BookPlatformComponent {
   bookTypes: string[] = ['Fiction', 'Non-Fiction', 'Sci-Fi', 'Biography'];

@@ -46,7 +46,7 @@
         </section>
     </form>
     @if(!isViewMode){
-        <button mat-flat-button class="default_button" [disabled]="customerForm.invalid" (click)="customerId? updateCustomer():addCustomer()">
+        <button mat-flat-button class="btn default_button" [disabled]="customerForm.invalid" (click)="customerId? updateCustomer():addCustomer()">
             Submit
          </button>
     }

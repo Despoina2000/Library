@@ -2,14 +2,19 @@
     margin: 10px;
     font-size: x-large;
   }
-  
+
   .cancel_button{
     color: red !important;
     margin-left: 10px;
   }
 
+.delete_button{
+  background-color: red !important;
+  margin-left: 10px;
+}
+
   .default_button{
-    background-color: cyan; 
+    background-color: cyan;
     color:black;
 }
 

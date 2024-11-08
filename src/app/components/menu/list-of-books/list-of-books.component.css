@@ -7,7 +7,7 @@
     mat-card-title{
         font-size: 30px;
         color:white
-        
+
     }
     mat-card{
         color: black;
@@ -33,16 +33,16 @@
         padding: 10px 0; /* Optional padding for spacing */
       }
 
-    .btn{
+    /*.btn{
         margin: 10px;
         font-size: x-large;
     }
-    
+
     .default_button{
-        background-color: cyan; 
+        background-color: cyan;
         color:black;
     }
-    
+
     .delete_button{
         background-color: red;
     }
@@ -52,11 +52,11 @@
         border-color: #ffeeba;
         color: #856404;
       }
-      
+
       .alert {
         padding: 15px;
         border: 1px solid #ddd;
         position: relative;
         margin: 20px;
         border-radius: 5px;
-      }
+      }*/

@@ -11,7 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
   standalone: true,
   imports: [ReactiveFormsModule,NgIf, MatButtonModule],
   templateUrl: './customer-platform.component.html',
-  styleUrl: './customer-platform.component.css'
+  styleUrls: ['./customer-platform.component.css','../../../../../css/button.css','../../../../../css/form.css']
 })
 export class CustomerPlatformComponent {
   customerForm: FormGroup=new FormGroup({

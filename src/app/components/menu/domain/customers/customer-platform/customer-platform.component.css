@@ -1,28 +1,4 @@
-.default_button{
-    background-color: cyan; 
-    color:black;
-}
-.error {
-    color: red;
-    font-size: large;
-  }
 
-  .small{
-    color:red;
-    font-size: large;
-}
-
-button:disabled,
-button[disabled]{
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-}
-
-button{
-    margin-top: 20px;
-    font-size: x-large;
-}
 
 .grid-container {
   display: grid;
@@ -31,33 +7,4 @@ button{
   row-gap: 15px;
   }
 
-  input[type='text'],input[type='number']  {
-    height: 3.4em;
-    padding-left: 5%;
-    line-height: 2;
-    font-size: x-large;
-    
-  }
 
-  .input-group {
-    margin-bottom: 1em;
-    zoom: 1;
-  }
-  .input-group:before,
-  .input-group:after {
-    content: "";
-    display: table;
-  }
-  .input-group:after {
-    clear: both;
-  }
-  
-  input:focus {
-    outline: 0;
-    border-color: cyan;
-  }
-  
-
-  h4, h5 {
-    color: rgb(1, 144, 157);
-  }
