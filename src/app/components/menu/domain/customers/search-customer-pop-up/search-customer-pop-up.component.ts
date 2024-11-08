@@ -46,10 +46,23 @@ export class SearchCustomerPopUpComponent {
   }
 
   searchFilter(){
-  const searchFilterData:  SearchCustomerFilter= {
-      ...this.customerForm.value
-    };
-    this.dialogRef.close(searchFilterData);
+    if(!this.formEmpty()){
+      const searchFilterData:  SearchCustomerFilter= {
+        ...this.customerForm.value
+      };
+      this.dialogRef.close(searchFilterData);
+    }
+    else{
+      this.dialogRef.close(null);
+    }
+
+  }
+
+  formEmpty(): boolean {
+    return Object.values(this.customerForm.controls).every(control => {
+      const value = control.value;
+      return value === null || value === undefined || value === '';
+    });
   }
 
 }

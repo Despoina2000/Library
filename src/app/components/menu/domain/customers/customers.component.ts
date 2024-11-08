@@ -61,6 +61,11 @@ export class CustomersComponent {
 
         this.applyAdditionalFilters();
       }
+      else{
+        this.searchFilterFlag = false;
+        this.searchResults = {};
+        this.loadCustomers();
+      }
 
 
 

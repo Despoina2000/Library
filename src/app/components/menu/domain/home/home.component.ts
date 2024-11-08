@@ -70,6 +70,11 @@ export class HomeComponent {
           this.applyAdditionalFilters();
         }
       }
+      else{
+        this.searchFilterFlag = false;
+        this.searchResults = {};
+        this.loadBooks();
+      }
     });
   }
 
