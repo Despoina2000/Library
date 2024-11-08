@@ -54,11 +54,15 @@ export class CustomersComponent {
 
     dialogRef.afterClosed().subscribe((results) => {
 
-      this.searchFilterFlag = true;
+      if (results) {
+        this.searchFilterFlag = true;
 
-      this.searchResults=results;
+        this.searchResults=results;
+  
+        this.applyAdditionalFilters();
+      }
 
-      this.applyAdditionalFilters();
+      
 
   });
 }

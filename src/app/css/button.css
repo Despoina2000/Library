@@ -1,0 +1,22 @@
+.btn{
+    margin: 10px;
+    font-size: x-large;
+  }
+  
+  .cancel_button{
+    color: red !important;
+    margin-left: 10px;
+  }
+
+  .default_button{
+    background-color: cyan; 
+    color:black;
+}
+
+  button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
